@@ -1,0 +1,73 @@
+<svg width="1200" height="820" viewBox="0 0 1200 820" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cc-bg" x1="0" y1="0" x2="1200" y2="820" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#090D16"/>
+      <stop offset="1" stop-color="#05070B"/>
+    </linearGradient>
+    <radialGradient id="cc-glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(860 390) rotate(135) scale(460)">
+      <stop stop-color="#22D3EE" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#22D3EE" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="820" fill="url(#cc-bg)"/>
+  <rect width="1200" height="820" fill="url(#cc-glow)"/>
+
+  <!-- Browser Window -->
+  <rect x="70" y="64" width="1060" height="692" rx="28" fill="#0B101B" stroke="#FFFFFF" stroke-opacity="0.12" stroke-width="2"/>
+  <rect x="71" y="65" width="1058" height="54" rx="27" fill="#101726"/>
+  <line x1="70" y1="119" x2="1130" y2="119" stroke="#FFFFFF" stroke-opacity="0.08"/>
+  <circle cx="108" cy="92" r="6" fill="#EF4444" fill-opacity="0.7"/>
+  <circle cx="130" cy="92" r="6" fill="#F59E0B" fill-opacity="0.7"/>
+  <circle cx="152" cy="92" r="6" fill="#10B981" fill-opacity="0.7"/>
+  <rect x="380" y="78" width="440" height="28" rx="14" fill="#FFFFFF" fill-opacity="0.05" stroke="#FFFFFF" stroke-opacity="0.08"/>
+  <text x="600" y="96" text-anchor="middle" fill="#94A3B8" font-family="ui-monospace, monospace" font-size="13">customcar-frontend.vercel.app</text>
+
+  <!-- Header -->
+  <text x="116" y="168" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="20" font-weight="800" letter-spacing="2">CUSTOMCAR</text>
+  <rect x="650" y="156" width="60" height="10" rx="5" fill="#FFFFFF" fill-opacity="0.45"/>
+  <rect x="736" y="156" width="60" height="10" rx="5" fill="#FFFFFF" fill-opacity="0.45"/>
+  <rect x="822" y="156" width="60" height="10" rx="5" fill="#FFFFFF" fill-opacity="0.45"/>
+  <rect x="928" y="143" width="156" height="36" rx="18" fill="#22D3EE"/>
+
+  <!-- Hero Content -->
+  <rect x="116" y="232" width="180" height="28" rx="14" fill="#22D3EE" fill-opacity="0.14" stroke="#22D3EE" stroke-opacity="0.35"/>
+  <text x="206" y="250" text-anchor="middle" fill="#67E8F9" font-family="system-ui, sans-serif" font-size="12" font-weight="600">AUTOMOTIVE STUDIO</text>
+
+  <text x="116" y="314" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="40" font-weight="700">Precision Custom</text>
+  <text x="116" y="362" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="40" font-weight="700">Automotive Builds</text>
+  <rect x="116" y="394" width="380" height="12" rx="6" fill="#94A3B8" fill-opacity="0.45"/>
+  <rect x="116" y="418" width="310" height="12" rx="6" fill="#94A3B8" fill-opacity="0.3"/>
+
+  <rect x="116" y="464" width="170" height="44" rx="22" fill="#22D3EE"/>
+  <rect x="302" y="464" width="144" height="44" rx="22" fill="#FFFFFF" fill-opacity="0.06" stroke="#FFFFFF" stroke-opacity="0.16"/>
+
+  <!-- Automotive Silhouette Card -->
+  <rect x="598" y="218" width="486" height="314" rx="24" fill="#101829" stroke="#22D3EE" stroke-opacity="0.22"/>
+  <path d="M640 422L688 346C704 322 730 308 759 308H894C930 308 962 328 978 360L1002 408L1044 420C1054 423 1060 432 1060 442V458H1010C1004 432 981 412 954 412C927 412 904 432 898 458H772C766 432 743 412 716 412C689 412 666 432 660 458H624V442C624 434 630 425 640 422Z" fill="#1E293B" stroke="#22D3EE" stroke-opacity="0.5" stroke-width="2"/>
+  <circle cx="716" cy="458" r="34" fill="#090D16" stroke="#22D3EE" stroke-width="4"/>
+  <circle cx="716" cy="458" r="13" fill="#22D3EE"/>
+  <circle cx="954" cy="458" r="34" fill="#090D16" stroke="#22D3EE" stroke-width="4"/>
+  <circle cx="954" cy="458" r="13" fill="#22D3EE"/>
+  <path d="M712 346L744 320H884L934 358H712V346Z" fill="#22D3EE" fill-opacity="0.18"/>
+
+  <!-- Service Pills Bottom -->
+  <rect x="116" y="572" width="224" height="132" rx="18" fill="#101726" stroke="#FFFFFF" stroke-opacity="0.08"/>
+  <rect x="142" y="600" width="90" height="10" rx="5" fill="#22D3EE"/>
+  <rect x="142" y="628" width="160" height="12" rx="6" fill="#F8FAFC" fill-opacity="0.8"/>
+  <rect x="142" y="654" width="140" height="9" rx="4.5" fill="#94A3B8" fill-opacity="0.4"/>
+
+  <rect x="364" y="572" width="224" height="132" rx="18" fill="#101726" stroke="#FFFFFF" stroke-opacity="0.08"/>
+  <rect x="390" y="600" width="90" height="10" rx="5" fill="#34D399"/>
+  <rect x="390" y="628" width="160" height="12" rx="6" fill="#F8FAFC" fill-opacity="0.8"/>
+  <rect x="390" y="654" width="140" height="9" rx="4.5" fill="#94A3B8" fill-opacity="0.4"/>
+
+  <rect x="612" y="572" width="224" height="132" rx="18" fill="#101726" stroke="#FFFFFF" stroke-opacity="0.08"/>
+  <rect x="638" y="600" width="90" height="10" rx="5" fill="#22D3EE"/>
+  <rect x="638" y="628" width="160" height="12" rx="6" fill="#F8FAFC" fill-opacity="0.8"/>
+  <rect x="638" y="654" width="140" height="9" rx="4.5" fill="#94A3B8" fill-opacity="0.4"/>
+
+  <rect x="860" y="572" width="224" height="132" rx="18" fill="#101726" stroke="#FFFFFF" stroke-opacity="0.08"/>
+  <rect x="886" y="600" width="90" height="10" rx="5" fill="#34D399"/>
+  <rect x="886" y="628" width="160" height="12" rx="6" fill="#F8FAFC" fill-opacity="0.8"/>
+  <rect x="886" y="654" width="140" height="9" rx="4.5" fill="#94A3B8" fill-opacity="0.4"/>
+</svg>
