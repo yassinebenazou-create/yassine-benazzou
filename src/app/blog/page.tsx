@@ -12,9 +12,9 @@ const upcomingTopics = [
 ];
 
 export const metadata = createMetadata({
-  title: "Insights & Web Strategy | Yassine Benazzou",
+  title: "Web Design & SEO Insights",
   description:
-    "Upcoming practical guides on high-converting business websites, mobile speed, and SEO foundations.",
+    "Upcoming practical guides on business website development, professional website design, and technical SEO in Morocco.",
   path: "/blog",
 });
 

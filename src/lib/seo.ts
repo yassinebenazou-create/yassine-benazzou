@@ -7,6 +7,7 @@ type SeoInput = {
   path?: string;
   image?: string;
   keywords?: string[];
+  locale?: string;
 };
 
 export function absoluteUrl(path = "") {
@@ -20,6 +21,7 @@ export function createMetadata({
   path = "/",
   image,
   keywords,
+  locale,
 }: SeoInput): Metadata {
   const url = absoluteUrl(path);
   const resolvedImages = image
@@ -43,7 +45,7 @@ export function createMetadata({
       description,
       url,
       siteName: `${siteConfig.fullBrand} — ${siteConfig.tagline}`,
-      locale: siteConfig.locale,
+      locale: locale ?? siteConfig.locale,
       alternateLocale: siteConfig.alternateLocales,
       type: "website",
       ...(resolvedImages ? { images: resolvedImages } : {}),
@@ -68,6 +70,7 @@ export function organizationJsonLd() {
         jobTitle: siteConfig.author.jobTitle,
         url: siteConfig.url,
         email: siteConfig.isEmailPlaceholder ? undefined : siteConfig.email,
+        telephone: siteConfig.phone,
         address: {
           "@type": "PostalAddress",
           addressLocality: siteConfig.city,
@@ -85,6 +88,13 @@ export function organizationJsonLd() {
         name: siteConfig.fullBrand,
         description: siteConfig.description,
         url: siteConfig.url,
+        email: siteConfig.isEmailPlaceholder ? undefined : siteConfig.email,
+        telephone: siteConfig.phone,
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: siteConfig.city,
+          addressCountry: "MA",
+        },
         areaServed: ["Morocco", "France", "Belgium", "Canada", "United Arab Emirates", "Worldwide"],
         founder: { "@id": `${siteConfig.url}/#person` },
         availableLanguage: ["English", "French"],
@@ -125,5 +135,34 @@ export function faqJsonLd(items: { question: string; answer: string }[]) {
         text: item.answer,
       },
     })),
+  };
+}
+
+export function localServiceJsonLd({
+  name,
+  description,
+  path,
+  areaServed,
+}: {
+  name: string;
+  description: string;
+  path: string;
+  areaServed: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name,
+    description,
+    url: absoluteUrl(path),
+    serviceType: "Web Design & Web Development",
+    areaServed: {
+      "@type": "Place",
+      name: areaServed,
+    },
+    provider: {
+      "@id": `${siteConfig.url}/#person`,
+    },
+    availableLanguage: ["French", "English"],
   };
 }

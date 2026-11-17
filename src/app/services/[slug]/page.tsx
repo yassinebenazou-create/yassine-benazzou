@@ -19,9 +19,9 @@ export async function generateMetadata({ params }: { params: Params }) {
   }
 
   return createMetadata({
-    title: `${service.title.en} | Yassine Benazzou`,
-    description: service.description.en,
-    path: `/services/${slug}`,
+    title: service.title.en,
+    description: service.seoDescription.en,
+    path: `/services/${service.slug}`,
   });
 }
 

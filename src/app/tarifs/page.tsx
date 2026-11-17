@@ -6,10 +6,15 @@ import { createMetadata } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 
 export const metadata = createMetadata({
-  title: "Website Pricing & Custom Quotes | Yassine Benazzou",
+  title: "Business Website Pricing & Custom Quotes",
   description:
-    "Clear custom website quotes for business sites, e-commerce stores, and bilingual digital platforms.",
+    "Custom website development pricing in Morocco and abroad for business sites, e-commerce stores, and bilingual web platforms.",
   path: "/tarifs",
+  keywords: [
+    "Business Website Development",
+    "Website Development Morocco",
+    "Création site web Maroc",
+  ],
 });
 
 export default function PricingPage() {

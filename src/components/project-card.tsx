@@ -6,9 +6,16 @@ import { ArrowUpRight, ExternalLink } from "lucide-react";
 import { useLanguage } from "@/components/language-provider";
 import type { Project } from "@/data/projects";
 
-export function ProjectCard({ project }: { project: Project }) {
+export function ProjectCard({
+  project,
+  headingLevel = "h3",
+}: {
+  project: Project;
+  headingLevel?: "h2" | "h3";
+}) {
   const { language, content } = useLanguage();
   const labels = content.projects;
+  const Heading = headingLevel;
   const tags =
     project.technologies.length > 0
       ? project.technologies
@@ -49,9 +56,9 @@ export function ProjectCard({ project }: { project: Project }) {
             href={`/realisations/${project.slug}`}
             className="focus:outline-none focus-visible:underline"
           >
-            <h3 className="font-display text-2xl font-bold tracking-tight text-white transition group-hover:text-emerald-300">
+            <Heading className="font-display text-2xl font-bold tracking-tight text-white transition group-hover:text-emerald-300">
               {project.name}
-            </h3>
+            </Heading>
           </Link>
           <Link
             href={`/realisations/${project.slug}`}

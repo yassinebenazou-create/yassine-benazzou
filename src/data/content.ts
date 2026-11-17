@@ -19,12 +19,12 @@ export const whyWorkWithMeItems: WhyItem[] = [
   {
     key: "responsive",
     title: {
-      en: "Mobile-first precision",
-      fr: "Précision sur tous les écrans",
+      en: "Responsive web design everywhere",
+      fr: "Design web responsive",
     },
     description: {
-      en: "Tested from 360px phones to wide monitors so visitors browse and reach out easily.",
-      fr: "Vérifié du smartphone 360px aux grands écrans pour offrir une navigation fluide partout.",
+      en: "Structured cleanly for mobile phones, tablets, and wide desktop screens so visitors browse comfortably.",
+      fr: "Conçu pour smartphones, tablettes et grands écrans afin d'offrir une navigation claire partout.",
     },
   },
   {

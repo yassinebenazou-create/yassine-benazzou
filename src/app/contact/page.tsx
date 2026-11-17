@@ -7,9 +7,9 @@ import { siteConfig, whatsappUrl } from "@/config/site";
 import { breadcrumbJsonLd, createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
-  title: "Contact Yassine Benazzou | Start Your Website Project",
+  title: "Contact & Project Quote",
   description:
-    "Have a website project in mind? Contact Yassine Benazzou via the project brief form, WhatsApp, email, LinkedIn, or Instagram.",
+    "Contact Yassine Benazzou, freelance web developer in Morocco, via project brief, WhatsApp (+212 7 02 73 62 93), LinkedIn, or Instagram.",
   path: "/contact",
 });
 

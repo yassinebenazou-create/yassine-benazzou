@@ -22,9 +22,16 @@ const icons: Record<ServiceIconKey, typeof MonitorSmartphone> = {
   shield: ShieldCheck,
 };
 
-export function ServiceCard({ service }: { service: Service }) {
+export function ServiceCard({
+  service,
+  headingLevel = "h3",
+}: {
+  service: Service;
+  headingLevel?: "h2" | "h3";
+}) {
   const { language, content } = useLanguage();
   const Icon = icons[service.icon];
+  const Heading = headingLevel;
 
   return (
     <article className="studio-card group flex h-full flex-col rounded-[24px] p-6 sm:p-8">
@@ -40,9 +47,9 @@ export function ServiceCard({ service }: { service: Service }) {
       <p className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-emerald-300/90">
         {service.eyebrow[language]}
       </p>
-      <h3 className="font-display mt-2.5 text-xl font-bold tracking-tight text-white sm:text-2xl">
+      <Heading className="font-display mt-2.5 text-xl font-bold tracking-tight text-white sm:text-2xl">
         {service.title[language]}
-      </h3>
+      </Heading>
       <p className="mt-3 max-w-md flex-1 text-sm leading-relaxed text-slate-300 sm:text-base">
         {service.description[language]}
       </p>

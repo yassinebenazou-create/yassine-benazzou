@@ -7,10 +7,16 @@ import { verifiedTechnologies, whyWorkWithMeItems, workProcessSteps } from "@/da
 import { breadcrumbJsonLd, createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
-  title: "About Yassine Benazzou | Freelance Web Developer & Designer",
+  title: "Freelance Next.js & Full-Stack Developer",
   description:
-    "Independent web developer and designer based in Morocco building clear, high-converting websites for businesses worldwide.",
+    "Yassine Benazzou — freelance Next.js developer and full-stack web designer in Morocco building fast, responsive websites for growing businesses.",
   path: "/a-propos",
+  keywords: [
+    "Freelance Next.js Developer",
+    "Développeur Full Stack freelance",
+    "Développeur web au Maroc",
+    "Web designer freelance Maroc",
+  ],
 });
 
 export default function AboutPage() {
@@ -23,12 +29,16 @@ export default function AboutPage() {
         ])}
       />
       <PageHero
-        eyebrow="About Me"
-        title="Custom Websites Built for Real Business Results."
-        text="I'm Yassine Benazzou, an independent web developer and designer serving ambitious businesses in Morocco and worldwide."
+        eyebrow="Freelance Next.js Developer"
+        title="Full-Stack & Next.js Web Developer in Morocco."
+        text="I'm Yassine Benazzou, an independent web developer and web designer based in El Jadida serving businesses in Morocco and worldwide."
       >
         <ButtonLink href="/contact">
           <span>Book a Discovery Call</span>
+          <ArrowUpRight className="h-4 w-4" />
+        </ButtonLink>
+        <ButtonLink href="/realisations" variant="secondary">
+          <span>Browse Selected Work</span>
           <ArrowUpRight className="h-4 w-4" />
         </ButtonLink>
       </PageHero>

@@ -85,15 +85,15 @@ export function HeroVisual() {
             />
           </Link>
 
-          <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
-            <div>
-              <p className="text-xs font-medium text-emerald-300">
-                {activeProject.industry[language]}
-              </p>
-              <h2 className="mt-0.5 font-display text-lg font-bold tracking-tight text-white">
-                {activeProject.name}
-              </h2>
-            </div>
+            <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <p className="text-xs font-medium text-emerald-300">
+                  {activeProject.industry[language]}
+                </p>
+                <p className="mt-0.5 font-display text-lg font-bold tracking-tight text-white">
+                  {activeProject.name}
+                </p>
+              </div>
 
             <div className="flex items-center gap-2">
               {activeProject.url ? (

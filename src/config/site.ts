@@ -1,14 +1,14 @@
 // CONFIGURATION PLACEHOLDERS:
-// Set NEXT_PUBLIC_CONTACT_EMAIL, NEXT_PUBLIC_CONTACT_PHONE, and NEXT_PUBLIC_WHATSAPP_NUMBER
-// in your environment (.env.local / Vercel) or replace the fallback placeholders below
-// before going live with your production contact details.
+// Set NEXT_PUBLIC_CONTACT_EMAIL in your environment (.env.local / Vercel) or replace
+// DEFAULT_EMAIL_PLACEHOLDER below before going live. Phone & WhatsApp default to Yassine's
+// number and can also be overridden via NEXT_PUBLIC_CONTACT_PHONE / NEXT_PUBLIC_WHATSAPP_NUMBER.
 const DEFAULT_EMAIL_PLACEHOLDER = "contact@example.com";
-const DEFAULT_PHONE_PLACEHOLDER = "+212 6 00 00 00 00";
-const DEFAULT_WHATSAPP_PLACEHOLDER = "+212600000000";
+const DEFAULT_PHONE = "+212 7 02 73 62 93";
+const DEFAULT_WHATSAPP = "+212702736293";
 
 const email = process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || DEFAULT_EMAIL_PLACEHOLDER;
-const phone = process.env.NEXT_PUBLIC_CONTACT_PHONE?.trim() || DEFAULT_PHONE_PLACEHOLDER;
-const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.trim() || DEFAULT_WHATSAPP_PLACEHOLDER;
+const phone = process.env.NEXT_PUBLIC_CONTACT_PHONE?.trim() || DEFAULT_PHONE;
+const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.trim() || DEFAULT_WHATSAPP;
 
 export const siteConfig = {
   name: "Yassine Benazzou",
@@ -24,8 +24,8 @@ export const siteConfig = {
   phone,
   whatsapp,
   isEmailPlaceholder: email === DEFAULT_EMAIL_PLACEHOLDER,
-  isPhonePlaceholder: phone === DEFAULT_PHONE_PLACEHOLDER,
-  isWhatsappPlaceholder: whatsapp.replace(/\D/g, "") === DEFAULT_WHATSAPP_PLACEHOLDER.replace(/\D/g, ""),
+  isPhonePlaceholder: false,
+  isWhatsappPlaceholder: false,
   city: "El Jadida",
   country: "Morocco",
   markets: ["Morocco", "France", "Belgium", "Canada", "UAE", "Worldwide"],

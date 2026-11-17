@@ -2,19 +2,72 @@ import { LocalSeoPage } from "@/components/sections/local-seo-page";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
-  title: "Creation site web Casablanca",
+  title: "Création site web Casablanca",
   description:
-    "Creation de sites web professionnels a Casablanca: sites vitrines, e-commerce, landing pages, SEO technique et developpement React Next.js.",
+    "Développeur Full Stack et web designer freelance pour Casablanca : refonte de site web, landing pages Next.js et boutiques e-commerce sur mesure.",
   path: "/creation-site-web-casablanca",
+  locale: "fr_MA",
+  keywords: [
+    "Création site web Casablanca",
+    "Développeur Full Stack freelance",
+    "Développeur web freelance Maroc",
+    "Création site internet professionnel",
+  ],
 });
 
 export default function Page() {
   return (
     <LocalSeoPage
       location="Casablanca"
-      title="Creation de site web a Casablanca"
-      text="Une page preparee pour cibler les entreprises casablancaises avec un contenu unique, oriente credibilite, conversion et SEO local."
-      highlights={["Marche concurrentiel", "Presentation premium", "Structure orientee conversion"]}
+      areaServed="Casablanca, Morocco"
+      path="/creation-site-web-casablanca"
+      title="Création de site web à Casablanca"
+      text="Accompagnement dédié aux PME, startups et équipes B2B de Casablanca souhaitant un site Next.js rapide, une refonte complète ou une landing page orientée conversion."
+      collaborationNote="Axe El Jadida – Casablanca · Suivi Réactif"
+      approachTitle="Des interfaces B2B et e-commerce taillées pour Casablanca"
+      approachText="Depuis El Jadida, je collabore en direct (à distance ou sur rendez-vous sur l'axe Casablanca) avec des entreprises exigeantes qui cherchent la qualité studio sans lourdeur d'agence."
+      highlights={[
+        "Refonte complète de sites vieillissants sans perte de liens ni de SEO",
+        "Landing pages rapides conçues pour rentabiliser vos campagnes Meta et Google Ads",
+        "Architecture React / Next.js ou e-commerce évolutive pour marques en croissance",
+      ]}
+      serviceSlugs={["website-redesign", "landing-page", "ecommerce"]}
+      localUseCases={[
+        {
+          sector: "Startups & SaaS / B2B",
+          need: "Clarifier une proposition de valeur complexe dès le premier écran et guider les prospects vers une demande de démo ou de devis.",
+        },
+        {
+          sector: "PME établies en refonte",
+          need: "Remplacer un ancien site lent ou non responsive sur mobile tout en conservant le référencement acquis.",
+        },
+        {
+          sector: "Marques D2C & Retail",
+          need: "Optimiser la vitesse des fiches produits et fluidifier la commande mobile pour limiter l'abandon de panier.",
+        },
+      ]}
+      relatedProject={{
+        name: "Customcar",
+        slug: "customcar",
+        note: "Exemple de vitrine contrastée développée avec Next.js et Tailwind CSS pour valoriser des prestations spécialisées et capter des devis.",
+      }}
+      faqs={[
+        {
+          question: "Comment travaillez-vous avec des clients basés à Casablanca ?",
+          answer:
+            "Le suivi se fait en direct par visioconférence, WhatsApp et liens de prévisualisation en temps réel, avec possibilité de rencontre sur l'axe Casablanca – El Jadida.",
+        },
+        {
+          question: "Pouvez-vous refondre un site existant sans perdre notre référencement ?",
+          answer:
+            "Oui. Lors d'une refonte, les anciennes URLs, titres et redirections sont cartographiés avant la mise en ligne pour protéger votre historique Google.",
+        },
+        {
+          question: "Créez-vous des landing pages dédiées à nos campagnes publicitaires ?",
+          answer:
+            "Oui. Nous concevons des pages rapides ciblées sur une offre précise, prêtes pour le trafic payant et la capture directe de prospects.",
+        },
+      ]}
     />
   );
 }

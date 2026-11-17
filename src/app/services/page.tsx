@@ -3,10 +3,16 @@ import { ServicesArchiveView } from "@/components/sections/services-views";
 import { breadcrumbJsonLd, createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
-  title: "Web Design & Development Services | Morocco & International",
+  title: "Website Development & Design Morocco",
   description:
-    "Business website development, e-commerce websites, landing page design, website redesign, responsive design, and maintenance & SEO.",
+    "Business website development, professional website design, e-commerce builds, landing pages, and technical SEO in Morocco and internationally.",
   path: "/services",
+  keywords: [
+    "Website Development Morocco",
+    "Business Website Development",
+    "Professional Website Design",
+    "Création site internet professionnel",
+  ],
 });
 
 export default function ServicesPage() {

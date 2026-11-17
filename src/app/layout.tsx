@@ -29,7 +29,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Yassine Benazzou | Freelance Web Developer & Web Designer Morocco",
+    default: "Freelance Web Developer Morocco | Yassine Benazzou",
     template: "%s | Yassine Benazzou",
   },
   description:

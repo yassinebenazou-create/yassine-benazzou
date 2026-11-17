@@ -72,9 +72,9 @@ export function Footer() {
           </div>
 
           <div>
-            <h2 className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
               {f.navigationTitle}
-            </h2>
+            </p>
             <ul className="mt-5 space-y-3 text-sm">
               {navLinks.map((link) => (
                 <li key={link.key}>
@@ -87,22 +87,32 @@ export function Footer() {
                 </li>
               ))}
               <li>
+                <Link href="/realisations" className="text-slate-300 transition hover:text-emerald-400">
+                  {content.subpages.projectsCrumb}
+                </Link>
+              </li>
+              <li>
                 <Link href="/a-propos" className="text-slate-300 transition hover:text-emerald-400">
                   {content.subpages.aboutCrumb}
                 </Link>
               </li>
               <li>
                 <Link href="/tarifs" className="text-slate-300 transition hover:text-emerald-400">
-                  Pricing
+                  {language === "fr" ? "Tarifs & Devis" : "Pricing & Scope"}
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-slate-300 transition hover:text-emerald-400">
+                  {content.subpages.contactCrumb}
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h2 className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
               {f.servicesTitle}
-            </h2>
+            </p>
             <ul className="mt-5 space-y-3 text-sm">
               {services.map((service) => (
                 <li key={service.slug}>
@@ -118,9 +128,9 @@ export function Footer() {
           </div>
 
           <div>
-            <h2 className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
               {f.locationsTitle}
-            </h2>
+            </p>
             <ul className="mt-5 space-y-3 text-sm">
               {locations.map((loc) => (
                 <li key={loc.href}>

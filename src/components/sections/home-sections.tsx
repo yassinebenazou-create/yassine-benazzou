@@ -291,7 +291,7 @@ function BenefitsBentoSection() {
                   <span>{services[4].title[language]}</span>
                   <ArrowUpRight className="h-3.5 w-3.5" />
                 </Link>
-                <span className="text-slate-600" aria-hidden="true">
+                <span className="text-slate-400" aria-hidden="true">
                   ·
                 </span>
                 <Link
@@ -299,6 +299,16 @@ function BenefitsBentoSection() {
                   className="inline-flex min-h-10 items-center gap-1.5 text-sm font-semibold text-emerald-400 transition hover:text-emerald-300"
                 >
                   <span>{services[5].title[language]}</span>
+                  <ArrowUpRight className="h-3.5 w-3.5" />
+                </Link>
+                <span className="text-slate-400" aria-hidden="true">
+                  ·
+                </span>
+                <Link
+                  href="/tarifs"
+                  className="inline-flex min-h-10 items-center gap-1.5 text-sm font-semibold text-slate-200 transition hover:text-emerald-300"
+                >
+                  <span>{language === "fr" ? "Tarifs & Devis" : "Pricing & Scope"}</span>
                   <ArrowUpRight className="h-3.5 w-3.5" />
                 </Link>
               </div>
@@ -515,10 +525,14 @@ function StatementAndProjectsSection() {
               </div>
             </div>
 
-            <div className="mt-8">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <ButtonLink href="/#contact" variant="primary" className="w-full sm:w-auto">
                 <span>{a.cta}</span>
                 <ArrowRight className="h-4 w-4" />
+              </ButtonLink>
+              <ButtonLink href="/a-propos" variant="secondary" className="w-full sm:w-auto">
+                <span>{a.moreAboutCta}</span>
+                <ArrowUpRight className="h-4 w-4" />
               </ButtonLink>
             </div>
           </Reveal>

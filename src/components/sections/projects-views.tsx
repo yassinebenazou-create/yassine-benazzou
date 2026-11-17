@@ -33,7 +33,7 @@ export function ProjectsArchiveView() {
           <div className="grid gap-8 md:grid-cols-2">
             {featuredProjects.map((project, index) => (
               <Reveal key={project.slug} delay={index * 0.06}>
-                <ProjectCard project={project} />
+                <ProjectCard project={project} headingLevel="h2" />
               </Reveal>
             ))}
           </div>
@@ -109,7 +109,7 @@ export function ProjectDetailView({ project }: { project: Project }) {
               <h2 className="text-lg font-semibold text-white">{sub.projectInfo}</h2>
               <dl className="mt-5 space-y-5 text-sm">
                 <div>
-                  <dt className="font-mono text-xs uppercase tracking-wider text-slate-500">
+                  <dt className="font-mono text-xs uppercase tracking-wider text-slate-400">
                     {sub.sector}
                   </dt>
                   <dd className="mt-1.5 font-medium text-white">
@@ -117,7 +117,7 @@ export function ProjectDetailView({ project }: { project: Project }) {
                   </dd>
                 </div>
                 <div>
-                  <dt className="font-mono text-xs uppercase tracking-wider text-slate-500">
+                  <dt className="font-mono text-xs uppercase tracking-wider text-slate-400">
                     {project.technologies.length > 0 ? sub.technologies : sub.deliverables}
                   </dt>
                   <dd className="mt-2.5 flex flex-wrap gap-2">

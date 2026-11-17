@@ -35,7 +35,7 @@ export function ServicesArchiveView() {
 
               return (
                 <Reveal key={service.slug} delay={index * 0.04} className={spanClass}>
-                  <ServiceCard service={service} />
+                  <ServiceCard service={service} headingLevel="h2" />
                 </Reveal>
               );
             })}

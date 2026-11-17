@@ -3,10 +3,15 @@ import { ProjectsArchiveView } from "@/components/sections/projects-views";
 import { breadcrumbJsonLd, createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
-  title: "Selected Projects | Web Design & Development Portfolio",
+  title: "Web Design Projects & Portfolio Morocco",
   description:
-    "Explore selected websites crafted by Yassine Benazzou: Nutritionniste Agadir, Customcar, Eleva Design, and AtlasQuad.",
+    "Selected websites built by a freelance web designer in Morocco: Nutritionniste Agadir, Customcar, Eleva Design, and AtlasQuad.",
   path: "/realisations",
+  keywords: [
+    "Web Designer Morocco",
+    "Freelance Web Developer Morocco",
+    "Website Development Morocco",
+  ],
 });
 
 export default function RealisationsPage() {
