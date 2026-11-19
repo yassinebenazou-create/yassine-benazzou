@@ -10,6 +10,10 @@ const email = process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || DEFAULT_EMAIL_PLA
 const phone = process.env.NEXT_PUBLIC_CONTACT_PHONE?.trim() || DEFAULT_PHONE;
 const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.trim() || DEFAULT_WHATSAPP;
 
+const siteUrl = (
+  process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://yassine-benazzou.vercel.app"
+).replace(/\/$/, "");
+
 export const siteConfig = {
   name: "Yassine Benazzou",
   brand: "YASSINE.",
@@ -17,7 +21,7 @@ export const siteConfig = {
   tagline: "Freelance Web Developer & Web Designer",
   description:
     "Freelance web developer and web designer based in Morocco, building modern, high-performance websites for businesses in Morocco, France, Belgium, Canada, UAE, and worldwide.",
-  url: process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://portfolio-peach-three-57.vercel.app",
+  url: siteUrl,
   locale: "en_US",
   alternateLocales: ["fr_FR", "fr_MA"],
   email,
@@ -34,7 +38,7 @@ export const siteConfig = {
     instagram: "https://www.instagram.com/yssnn_eweb?xtok=bjkzd2IyeG9seGM=",
     facebook: "https://www.facebook.com/profile.php?id=100075906982295",
     googleReview: "https://g.page/r/CXEOWiILca0uEAE/review",
-    portfolio: "https://portfolio-peach-three-57.vercel.app/",
+    portfolio: `${siteUrl}/`,
   },
   author: {
     name: "Yassine Benazzou",

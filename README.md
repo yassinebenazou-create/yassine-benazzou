@@ -110,7 +110,7 @@ Créer `.env.local` (ignoré par git) :
 
 | Variable | Rôle | Par défaut |
 | --- | --- | --- |
-| `NEXT_PUBLIC_SITE_URL` | URL publique (sitemap, SEO) | URL Vercel actuelle |
+| `NEXT_PUBLIC_SITE_URL` | URL publique (sitemap, SEO) | `https://yassine-benazzou.vercel.app` |
 | `NEXT_PUBLIC_CONTACT_EMAIL` | Email affiché | `contact@example.com` (placeholder) |
 | `NEXT_PUBLIC_CONTACT_PHONE` | Téléphone affiché | `+212 7 02 73 62 93` |
 | `NEXT_PUBLIC_WHATSAPP_NUMBER` | Numéro WhatsApp | `+212702736293` |
