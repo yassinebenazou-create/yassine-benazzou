@@ -80,9 +80,9 @@ export const translations = {
       eyebrow: "Web Designer Morocco · Portfolio",
       title: "Website Development Projects in Morocco & Abroad.",
       subtitle:
-        "Selected websites delivered for healthcare, automotive, interior design, and tourism businesses.",
+        "Selected websites delivered for healthcare, e-commerce, automotive, tourism, and interior architecture businesses.",
       viewAll: "View Full Archive",
-      viewLive: "Visit Live Website",
+      viewLive: "View Live Website",
       caseDetails: "Read Project Breakdown",
       studioShowcase: "Studio Showcase",
       techLabel: "Focus & Stack",
@@ -302,7 +302,7 @@ export const translations = {
       eyebrow: "Web Designer Freelance Maroc",
       title: "Projets Web Livrés au Maroc et à l'International.",
       subtitle:
-        "Réalisations web dans la santé, l'automobile, le design d'intérieur et le tourisme.",
+        "Réalisations web dans la santé, l'e-commerce, l'automobile, le tourisme et l'architecture d'intérieur.",
       viewAll: "Toutes les réalisations",
       viewLive: "Visiter le Site en Ligne",
       caseDetails: "Voir l'Étude Détaillée",

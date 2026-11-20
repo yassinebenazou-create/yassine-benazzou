@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
+  ArrowDown,
   ArrowRight,
   ArrowUpRight,
   Check,
@@ -19,7 +20,9 @@ import {
 import { ContactForm } from "@/components/contact-form";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { HeroVisual } from "@/components/hero-visual";
+import { TubesBackground } from "@/components/TubesBackground";
 import { useLanguage } from "@/components/language-provider";
+import { ProjectCard } from "@/components/project-card";
 import { Reveal } from "@/components/reveal";
 import { InstagramIcon, LinkedinIcon } from "@/components/social-icons";
 import { ButtonLink, Container, SectionHeader } from "@/components/ui";
@@ -52,66 +55,75 @@ export function HomeSections() {
 }
 
 function HeroSection() {
-  const { content } = useLanguage();
+  const { language, content } = useLanguage();
   const h = content.hero;
 
   return (
-    <section
-      id="home"
-      className="relative overflow-hidden bg-[#07080b] pt-28 pb-20 sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-28"
-    >
-      {/* Restrained directional backdrop lighting */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_55%_45%_at_80%_15%,rgba(52,211,153,0.1),transparent)]"
-      />
-
-      <Container className="relative z-10">
-        <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-16">
-          <div className="min-w-0">
-            <div className="flex flex-wrap items-center gap-2.5">
-              <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3.5 py-1.5 text-xs font-medium text-emerald-300">
-                <span className="relative flex h-2 w-2" aria-hidden="true">
-                  <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 motion-safe:animate-ping" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+    <TubesBackground className="border-b border-white/10">
+      <section
+        id="home"
+        className="relative pt-28 pb-16 sm:pt-36 sm:pb-20 lg:pt-40 lg:pb-24"
+      >
+        <Container className="relative z-10">
+          <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-16">
+            <div className="min-w-0">
+              <div className="flex flex-wrap items-center gap-2.5">
+                <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/35 bg-emerald-400/10 px-3.5 py-1.5 text-xs font-medium text-emerald-300 backdrop-blur">
+                  <span className="relative flex h-2 w-2" aria-hidden="true">
+                    <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 motion-safe:animate-ping" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+                  </span>
+                  {h.available}
                 </span>
-                {h.available}
-              </span>
 
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-white/12 bg-white/[0.03] px-3.5 py-1.5 text-xs font-medium text-slate-200">
-                <Globe2 className="h-3.5 w-3.5 text-emerald-400" />
-                {h.location}
-              </span>
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-white/12 bg-white/[0.04] px-3.5 py-1.5 text-xs font-medium text-slate-200 backdrop-blur">
+                  <Globe2 className="h-3.5 w-3.5 text-emerald-400" />
+                  {h.location}
+                </span>
+              </div>
+
+              <p className="mt-7 font-mono text-xs uppercase tracking-[0.18em] text-slate-300 sm:text-sm">
+                {h.identity}
+              </p>
+
+              <h1 className="font-display mt-4 text-balance text-4xl font-extrabold tracking-[-0.04em] text-white sm:text-5xl lg:text-[3.75rem] lg:leading-[1.03]">
+                {h.headline}
+              </h1>
+
+              <p className="mt-6 max-w-lg text-pretty text-base leading-relaxed text-slate-200 sm:text-lg">
+                {h.description}
+              </p>
+
+              <div className="mt-9 flex flex-col gap-3.5 sm:flex-row sm:items-center">
+                <ButtonLink href="/#contact" variant="primary" className="min-h-13 w-full px-7 sm:w-auto">
+                  <span>{h.primaryCta}</span>
+                  <ArrowRight className="h-4 w-4" />
+                </ButtonLink>
+                <ButtonLink href="/#projects" variant="secondary" className="min-h-13 w-full px-7 sm:w-auto">
+                  <span>{h.secondaryCta}</span>
+                  <ArrowUpRight className="h-4 w-4" />
+                </ButtonLink>
+              </div>
             </div>
 
-            <p className="mt-7 font-mono text-xs uppercase tracking-[0.18em] text-slate-400 sm:text-sm">
-              {h.identity}
-            </p>
-
-            <h1 className="font-display mt-4 text-balance text-4xl font-extrabold tracking-[-0.04em] text-white sm:text-5xl lg:text-[3.75rem] lg:leading-[1.03]">
-              {h.headline}
-            </h1>
-
-            <p className="mt-6 max-w-lg text-pretty text-base leading-relaxed text-slate-300 sm:text-lg">
-              {h.description}
-            </p>
-
-            <div className="mt-9 flex flex-col gap-3.5 sm:flex-row sm:items-center">
-              <ButtonLink href="/#contact" variant="primary" className="min-h-13 w-full px-7 sm:w-auto">
-                <span>{h.primaryCta}</span>
-                <ArrowRight className="h-4 w-4" />
-              </ButtonLink>
-              <ButtonLink href="/#projects" variant="secondary" className="min-h-13 w-full px-7 sm:w-auto">
-                <span>{h.secondaryCta}</span>
-                <ArrowUpRight className="h-4 w-4" />
-              </ButtonLink>
+            <div className="md:animate-neon-float">
+              <HeroVisual />
             </div>
           </div>
 
-          <HeroVisual />
-        </div>
-      </Container>
-    </section>
+          <div className="mt-14 flex justify-center">
+            <a
+              href="#projects"
+              aria-label={language === "fr" ? "Défiler vers les projets" : "Scroll to projects"}
+              className="animate-scroll-bounce inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.03] px-4 py-2 font-mono text-[11px] uppercase tracking-[0.2em] text-slate-300 transition hover:border-emerald-400/45 hover:text-white"
+            >
+              <span>{language === "fr" ? "Découvrir" : "Explore"}</span>
+              <ArrowDown className="h-3.5 w-3.5 text-emerald-400" />
+            </a>
+          </div>
+        </Container>
+      </section>
+    </TubesBackground>
   );
 }
 
@@ -251,7 +263,7 @@ function BenefitsBentoSection() {
                 </p>
               </div>
 
-              <div className="mt-8 grid grid-cols-2 gap-3 border-t border-white/10 pt-5">
+              <div className="mt-8 grid grid-cols-1 gap-3 border-t border-white/10 pt-5 sm:grid-cols-2">
                 {whyWorkWithMeItems.slice(4, 6).map((item) => (
                   <div key={item.key}>
                     <p className="text-xs font-semibold text-white">
@@ -355,7 +367,7 @@ function BenefitsBentoSection() {
 }
 
 function StatementAndProjectsSection() {
-  const { language, content } = useLanguage();
+  const { content } = useLanguage();
   const p = content.projects;
   const st = content.statement;
   const a = content.about;
@@ -387,89 +399,18 @@ function StatementAndProjectsSection() {
           </ButtonLink>
         </div>
 
-        <div className="mt-14 space-y-8 lg:space-y-10">
+        <div className="mt-14 grid grid-cols-1 gap-7 md:grid-cols-6">
           {featuredProjects.map((project, index) => {
-            const reversed = index % 2 === 1;
-            const tags =
-              project.technologies.length > 0
-                ? project.technologies
-                : project.highlights[language];
+            const spanClass =
+              index < 2
+                ? "md:col-span-3"
+                : index < 4
+                  ? "md:col-span-3 lg:col-span-2"
+                  : "md:col-span-6 lg:col-span-2";
 
             return (
-              <Reveal key={project.slug} delay={0.04}>
-                <article className="studio-card grid items-center gap-8 rounded-[28px] p-5 sm:p-7 lg:grid-cols-12 lg:gap-10 lg:p-8">
-                  <Link
-                    href={`/realisations/${project.slug}`}
-                    className={cn(
-                      "group relative block aspect-[16/10] overflow-hidden rounded-[20px] border border-white/10 bg-[#07080b] lg:col-span-7",
-                      reversed && "lg:order-2",
-                    )}
-                  >
-                    <Image
-                      src={project.image}
-                      alt={`${project.name} — ${project.industry[language]}`}
-                      fill
-                      sizes="(max-width: 1024px) 100vw, 58vw"
-                      unoptimized={project.image.endsWith(".svg")}
-                      className="object-cover transition duration-500 group-hover:scale-[1.02]"
-                    />
-                  </Link>
-
-                  <div className={cn("lg:col-span-5", reversed && "lg:order-1")}>
-                    <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.03] px-3.5 py-1 text-xs font-medium text-slate-200">
-                      <span
-                        className={cn(
-                          "h-1.5 w-1.5 rounded-full",
-                          project.url ? "bg-emerald-400" : "bg-cyan-400",
-                        )}
-                        aria-hidden="true"
-                      />
-                      {project.industry[language]}
-                    </span>
-
-                    <h3 className="font-display mt-5 text-2xl font-bold tracking-tight text-white sm:text-3xl">
-                      {project.name}
-                    </h3>
-
-                    <p className="mt-3 max-w-md text-base leading-relaxed text-slate-300">
-                      {project.summary[language]}
-                    </p>
-
-                    <div className="mt-5 flex flex-wrap gap-2">
-                      {tags.map((item) => (
-                        <span
-                          key={item}
-                          className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 font-mono text-xs text-slate-200"
-                        >
-                          {item}
-                        </span>
-                      ))}
-                    </div>
-
-                    <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-                      {project.url ? (
-                        <ButtonLink
-                          href={project.url}
-                          external
-                          variant="primary"
-                          className="w-full sm:w-auto"
-                        >
-                          <span>{p.viewLive}</span>
-                          <ExternalLink className="h-4 w-4" />
-                        </ButtonLink>
-                      ) : null}
-
-                      <ButtonLink
-                        href={`/realisations/${project.slug}`}
-                        variant={project.url ? "secondary" : "primary"}
-                        className="w-full sm:w-auto"
-                      >
-                        <span>{p.caseDetails}</span>
-                        <ArrowUpRight className="h-4 w-4" />
-                      </ButtonLink>
-                    </div>
-                  </div>
-                </article>
+              <Reveal key={project.slug} delay={index * 0.05} className={spanClass}>
+                <ProjectCard project={project} headingLevel="h3" />
               </Reveal>
             );
           })}
@@ -572,7 +513,7 @@ function HowItWorksSection() {
           <div className="divide-y divide-white/10 rounded-[26px] border border-white/12 bg-[#0e1117] shadow-[0_20px_50px_-28px_rgba(0,0,0,0.9)]">
             {workProcessSteps.map((step, index) => (
               <Reveal key={step.step} delay={index * 0.05}>
-                <article className="flex flex-col gap-4 p-7 sm:flex-row sm:items-start sm:gap-7 sm:p-9">
+                <article className="flex flex-col gap-4 p-5 sm:flex-row sm:items-start sm:gap-7 sm:p-9">
                   <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-emerald-400/30 bg-emerald-400/10 font-mono text-sm font-semibold text-emerald-300">
                     {step.step}
                   </span>

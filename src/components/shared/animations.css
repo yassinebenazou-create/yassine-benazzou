@@ -1,0 +1,63 @@
+@keyframes neonFloat {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes scrollBounce {
+  0%,
+  100% {
+    transform: translateY(0px);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(6px);
+    opacity: 1;
+  }
+}
+
+.animate-neon-float {
+  animation: neonFloat 4.5s ease-in-out infinite;
+}
+
+.animate-scroll-bounce {
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+
+.neon-gradient-text {
+  background: linear-gradient(110deg, #ffffff 10%, #00ff88 45%, #22d3ee 75%, #ff006e 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.neon-card-lift {
+  transition:
+    transform 400ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 350ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 400ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .neon-card-lift:hover {
+    transform: translateY(-8px) scale(1.015);
+    border-color: rgba(0, 255, 136, 0.45);
+    box-shadow:
+      0 28px 65px -22px rgba(0, 0, 0, 0.92),
+      0 0 28px -12px rgba(0, 255, 136, 0.3);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-neon-float,
+  .animate-scroll-bounce {
+    animation: none !important;
+  }
+  .neon-card-lift:hover {
+    transform: none !important;
+  }
+}

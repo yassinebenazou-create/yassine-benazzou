@@ -218,7 +218,7 @@ export function ContactForm() {
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="rounded-[26px] border border-white/12 bg-[#0e1117] p-6 shadow-[0_24px_65px_-28px_rgba(0,0,0,0.9)] sm:p-8"
+      className="rounded-[26px] border border-white/12 bg-[#0e1117] p-5 shadow-[0_24px_65px_-28px_rgba(0,0,0,0.9)] sm:p-8"
     >
       <h3 className="font-display text-2xl font-bold tracking-tight text-white">
         {formCopy.title}

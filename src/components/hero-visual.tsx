@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowUpRight, Check, ExternalLink } from "lucide-react";
+import { ArrowUpRight, Check, ExternalLink, Eye } from "lucide-react";
 import { useLanguage } from "@/components/language-provider";
 import { featuredProjects } from "@/data/projects";
 import { cn } from "@/lib/utils";
@@ -42,7 +42,7 @@ export function HeroVisual() {
 
         {/* Selected Client Build Switcher */}
         <div
-          className="flex gap-1.5 overflow-x-auto border-b border-white/[0.07] bg-[#0a0c12] px-4 py-2.5"
+          className="flex flex-wrap gap-1.5 border-b border-white/[0.07] bg-[#0a0c12] px-4 py-2.5"
           role="tablist"
           aria-label={visual.switchLabel}
         >
@@ -70,20 +70,46 @@ export function HeroVisual() {
 
         {/* Live Project Preview Screen */}
         <div className="p-4 sm:p-5">
-          <Link
-            href={`/realisations/${activeProject.slug}`}
-            className="group relative block aspect-[16/10] overflow-hidden rounded-2xl border border-white/10 bg-[#07080b]"
-          >
-            <Image
-              src={activeProject.image}
-              alt={`${activeProject.name} — ${activeProject.industry[language]}`}
-              fill
-              priority
-              sizes="(max-width: 1024px) 100vw, 44vw"
-              unoptimized={activeProject.image.endsWith(".svg")}
-              className="object-cover transition duration-500 group-hover:scale-[1.02]"
-            />
-          </Link>
+          {activeProject.url ? (
+            <a
+              href={activeProject.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${content.projects.viewLive}: ${activeProject.name}`}
+              className="group relative block aspect-[16/10] overflow-hidden rounded-2xl border border-white/10 bg-[#07080b] focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+            >
+              <Image
+                src={activeProject.image}
+                alt={`${activeProject.name} — ${activeProject.industry[language]}`}
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 44vw"
+                unoptimized={activeProject.image.endsWith(".svg")}
+                className="object-cover object-top transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.05]"
+              />
+              <div className="absolute inset-0 flex items-center justify-center bg-[#07080b]/70 opacity-0 backdrop-blur-[2px] transition-opacity duration-300 group-hover:opacity-100">
+                <span className="inline-flex translate-y-2 items-center gap-2 rounded-full border border-emerald-400/50 bg-[#0d121a]/95 px-4 py-2 text-xs font-semibold text-white transition-all duration-300 group-hover:translate-y-0">
+                  <Eye className="h-4 w-4 text-emerald-400" />
+                  <span>{content.projects.viewLive}</span>
+                </span>
+              </div>
+            </a>
+          ) : (
+            <Link
+              href={`/realisations/${activeProject.slug}`}
+              className="group relative block aspect-[16/10] overflow-hidden rounded-2xl border border-white/10 bg-[#07080b]"
+            >
+              <Image
+                src={activeProject.image}
+                alt={`${activeProject.name} — ${activeProject.industry[language]}`}
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 44vw"
+                unoptimized={activeProject.image.endsWith(".svg")}
+                className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.05]"
+              />
+            </Link>
+          )}
 
             <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
               <div>

@@ -1,7 +1,9 @@
 @import "tailwindcss";
+@import "../components/shared/animations.css";
 
 :root {
   --background: #07080b;
+  --bg-dark: #07080b;
   --surface: #0e1117;
   --surface-elevated: #141923;
   --foreground: #f8fafc;
@@ -9,6 +11,10 @@
   --muted: #94a3b8;
   --accent-emerald: #34d399;
   --accent-cyan: #22d3ee;
+  --neon-cyan: #00ff88;
+  --neon-pink: #ff006e;
+  --neon-purple: #7700ff;
+  --neon-orange: #ff8800;
   --motion-fast: 180ms;
   --motion-normal: 300ms;
   --motion-reveal: 640ms;
@@ -32,7 +38,7 @@ body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
-  overflow-x: hidden;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

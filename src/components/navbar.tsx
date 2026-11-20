@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { BrandLogo } from "@/components/brand-logo";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { useLanguage } from "@/components/language-provider";
+import { NAV_UNDERLINE_COLORS } from "@/components/shared/constants";
 import { navLinks } from "@/config/site";
 import { cn } from "@/lib/utils";
 
@@ -40,7 +41,7 @@ export function Navbar() {
       )}
     >
       <nav
-        className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-5 sm:px-6 lg:px-8"
+        className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-3 px-4 sm:h-20 sm:gap-4 sm:px-6 lg:px-8"
         aria-label="Primary navigation"
       >
         <Link
@@ -51,25 +52,31 @@ export function Navbar() {
           <BrandLogo />
         </Link>
 
-        {/* Simplified 4-link navigation */}
+        {/* Simplified 4-link navigation with expanding neon hover underlines */}
         <div className="hidden items-center gap-1 rounded-full border border-white/10 bg-white/[0.03] p-1 lg:flex">
-          {navLinks.map((link) => {
+          {navLinks.map((link, index) => {
             const isSubActive =
               (link.key === "services" && pathname.startsWith("/services")) ||
               (link.key === "projects" && pathname.startsWith("/realisations"));
+            const underlineColor = NAV_UNDERLINE_COLORS[index % NAV_UNDERLINE_COLORS.length];
 
             return (
               <Link
                 key={link.key}
                 href={link.href}
                 className={cn(
-                  "rounded-full px-4 py-2 text-sm font-medium transition duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400",
+                  "group relative rounded-full px-4 py-2 text-sm font-medium transition duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400",
                   isSubActive
                     ? "bg-white/10 text-white"
-                    : "text-slate-300 hover:bg-white/[0.06] hover:text-white",
+                    : "text-slate-300 hover:bg-white/[0.05] hover:text-white",
                 )}
               >
-                {labels[link.key]}
+                <span>{labels[link.key]}</span>
+                <span
+                  aria-hidden="true"
+                  style={{ backgroundColor: underlineColor }}
+                  className="absolute bottom-1 left-4 right-4 h-[2px] origin-left scale-x-0 rounded-full transition-transform duration-300 ease-out group-hover:scale-x-100"
+                />
               </Link>
             );
           })}
@@ -80,7 +87,7 @@ export function Navbar() {
           <LanguageSwitcher />
           <Link
             href="/#contact"
-            className="group inline-flex min-h-11 items-center gap-1.5 rounded-full bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-[0_10px_28px_-10px_rgba(52,211,153,0.6)] transition duration-200 hover:-translate-y-0.5 hover:bg-emerald-300 active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+            className="group inline-flex min-h-11 items-center gap-1.5 rounded-full bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-[0_10px_28px_-10px_rgba(52,211,153,0.6)] transition duration-200 hover:-translate-y-0.5 hover:scale-[1.03] hover:bg-emerald-300 active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
           >
             <span>{content.nav.letsTalk}</span>
             <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
