@@ -168,9 +168,7 @@ export function ContactForm() {
 
     return (
       <div className="rounded-[28px] border border-emerald-400/25 bg-[#0d131c] p-7 sm:p-9">
-        <span className="grid h-12 w-12 place-items-center rounded-2xl border border-emerald-400/30 bg-emerald-400/15 text-emerald-300">
-          <CheckCircle2 className="h-6 w-6" />
-        </span>
+        <CheckCircle2 className="h-8 w-8 text-emerald-400" />
         <h3 className="mt-5 text-2xl font-semibold tracking-tight text-white">
           {formCopy.successTitle}
         </h3>

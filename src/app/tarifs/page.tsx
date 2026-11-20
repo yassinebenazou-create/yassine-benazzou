@@ -1,4 +1,4 @@
-import { ArrowUpRight, CheckCircle2 } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import { FinalCta } from "@/components/sections/home-sections";
 import { ButtonLink, Container, PageHero } from "@/components/ui";
 import { pricingPlans } from "@/data/pricing";
@@ -26,8 +26,7 @@ export default function PricingPage() {
         text="Every engagement starts with a discovery call so deliverables, timeline, and pricing stay transparent from day one."
       >
         <ButtonLink href="/contact">
-          <span>Request Your Project Quote</span>
-          <ArrowUpRight className="h-4 w-4" />
+          Request Your Project Quote
         </ButtonLink>
       </PageHero>
 
@@ -49,7 +48,7 @@ export default function PricingPage() {
                 <div className="flex flex-wrap items-center justify-between gap-4">
                   <div>
                     {plan.recommended ? (
-                      <span className="mb-3 inline-flex rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 font-mono text-[11px] font-semibold uppercase tracking-wider text-emerald-300">
+                      <span className="mb-3 inline-flex rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-xs font-medium text-emerald-300">
                         Recommended for Growth
                       </span>
                     ) : null}
@@ -57,7 +56,7 @@ export default function PricingPage() {
                       {plan.name}
                     </h2>
                   </div>
-                  <p className="font-mono text-lg font-semibold text-emerald-400">
+                  <p className="text-base font-semibold text-emerald-400">
                     {plan.price}
                   </p>
                 </div>
@@ -81,8 +80,7 @@ export default function PricingPage() {
                 </ul>
 
                 <ButtonLink href="/contact" className="mt-8 w-full sm:w-fit">
-                  <span>Request Quote for {plan.name}</span>
-                  <ArrowUpRight className="h-4 w-4" />
+                  Request Quote for {plan.name}
                 </ButtonLink>
               </article>
             ))}

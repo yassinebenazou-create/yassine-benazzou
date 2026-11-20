@@ -154,7 +154,7 @@ export const translations = {
         linkedin: "LinkedIn",
         linkedinHint: "Connect professionally",
         instagram: "Instagram",
-        instagramHint: "@yssnn_eweb",
+        instagramHint: "@yassine.benazzou",
       },
       marketsBanner: "Serving Morocco (Casablanca, Agadir, El Jadida), France, Belgium, Canada, UAE & worldwide.",
       form: {
@@ -376,7 +376,7 @@ export const translations = {
         linkedin: "LinkedIn",
         linkedinHint: "Réseau professionnel",
         instagram: "Instagram",
-        instagramHint: "@yssnn_eweb",
+        instagramHint: "@yassine.benazzou",
       },
       marketsBanner: "Clients accompagnés au Maroc (Casablanca, Agadir, El Jadida), France, Belgique, Canada & EAU.",
       form: {

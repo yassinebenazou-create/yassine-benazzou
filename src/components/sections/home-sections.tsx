@@ -3,9 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  ArrowDown,
-  ArrowRight,
-  ArrowUpRight,
   Check,
   ExternalLink,
   Globe2,
@@ -82,11 +79,11 @@ function HeroSection() {
                 </span>
               </div>
 
-              <p className="mt-7 font-mono text-xs uppercase tracking-[0.18em] text-slate-300 sm:text-sm">
+              <p className="mt-7 text-sm font-medium text-slate-300">
                 {h.identity}
               </p>
 
-              <h1 className="font-display mt-4 text-balance text-4xl font-extrabold tracking-[-0.04em] text-white sm:text-5xl lg:text-[3.75rem] lg:leading-[1.03]">
+              <h1 className="font-display mt-3 text-balance text-4xl font-extrabold tracking-[-0.04em] text-white sm:text-5xl lg:text-[3.75rem] lg:leading-[1.03]">
                 {h.headline}
               </h1>
 
@@ -96,12 +93,10 @@ function HeroSection() {
 
               <div className="mt-9 flex flex-col gap-3.5 sm:flex-row sm:items-center">
                 <ButtonLink href="/#contact" variant="primary" className="min-h-13 w-full px-7 sm:w-auto">
-                  <span>{h.primaryCta}</span>
-                  <ArrowRight className="h-4 w-4" />
+                  {h.primaryCta}
                 </ButtonLink>
                 <ButtonLink href="/#projects" variant="secondary" className="min-h-13 w-full px-7 sm:w-auto">
-                  <span>{h.secondaryCta}</span>
-                  <ArrowUpRight className="h-4 w-4" />
+                  {h.secondaryCta}
                 </ButtonLink>
               </div>
             </div>
@@ -115,10 +110,10 @@ function HeroSection() {
             <a
               href="#projects"
               aria-label={language === "fr" ? "Défiler vers les projets" : "Scroll to projects"}
-              className="animate-scroll-bounce inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.03] px-4 py-2 font-mono text-[11px] uppercase tracking-[0.2em] text-slate-300 transition hover:border-emerald-400/45 hover:text-white"
+              className="animate-scroll-bounce inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.03] px-4 py-2 text-xs font-medium text-slate-300 transition hover:border-emerald-400/45 hover:text-white"
             >
-              <span>{language === "fr" ? "Découvrir" : "Explore"}</span>
-              <ArrowDown className="h-3.5 w-3.5 text-emerald-400" />
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" aria-hidden="true" />
+              <span>{language === "fr" ? "Voir les réalisations" : "Explore selected work"}</span>
             </a>
           </div>
         </Container>
@@ -139,7 +134,7 @@ function TrustBarSection() {
       <Container>
         <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
           <div>
-            <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-slate-400">
+            <p className="text-xs font-medium text-slate-400">
               {t.label}
             </p>
             <p className="mt-1 text-sm font-medium text-slate-200">
@@ -196,27 +191,21 @@ function BenefitsBentoSection() {
         <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
           <SectionHeader eyebrow={b.eyebrow} title={b.title} text={b.subtitle} />
           <ButtonLink href="/services" variant="secondary" className="w-full shrink-0 sm:w-fit">
-            <span>{b.viewServicesCta}</span>
-            <ArrowUpRight className="h-4 w-4" />
+            {b.viewServicesCta}
           </ButtonLink>
         </div>
 
-        {/* Clean Asymmetrical 12-Col Bento Grid (no repetitive 3-column grid) */}
+        {/* Clean Asymmetrical 12-Col Bento Grid */}
         <div className="mt-14 grid grid-cols-1 gap-5 md:grid-cols-12">
           {/* Bento Tile 1: Wide Feature Card */}
           <Reveal className="md:col-span-7">
             <article className="studio-card flex h-full flex-col justify-between rounded-[26px] p-7 sm:p-9">
               <div>
-                <div className="flex items-center justify-between gap-4">
-                  <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 font-mono text-xs font-medium text-emerald-300">
-                    {b.featuredTag}
-                  </span>
-                  <span className="font-mono text-xs text-slate-400">
-                    {primaryService.number}
-                  </span>
-                </div>
+                <span className="inline-flex items-center rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-xs font-medium text-emerald-300">
+                  {b.featuredTag}
+                </span>
 
-                <h3 className="font-display mt-6 text-2xl font-bold tracking-tight text-white sm:text-3xl">
+                <h3 className="font-display mt-5 text-2xl font-bold tracking-tight text-white sm:text-3xl">
                   {primaryService.title[language]}
                 </h3>
                 <p className="mt-3 max-w-xl text-base leading-relaxed text-slate-300">
@@ -239,10 +228,9 @@ function BenefitsBentoSection() {
               <div className="mt-8 border-t border-white/10 pt-5">
                 <Link
                   href={`/services/${primaryService.slug}`}
-                  className="inline-flex min-h-10 items-center gap-2 text-sm font-semibold text-emerald-400 transition hover:text-emerald-300"
+                  className="inline-flex min-h-10 items-center text-sm font-semibold text-emerald-400 transition hover:text-emerald-300"
                 >
-                  <span>{content.services.explore}</span>
-                  <ArrowUpRight className="h-4 w-4" />
+                  {content.services.explore}
                 </Link>
               </div>
             </article>
@@ -252,10 +240,13 @@ function BenefitsBentoSection() {
           <Reveal delay={0.05} className="md:col-span-5">
             <article className="studio-card flex h-full flex-col justify-between rounded-[26px] p-7 sm:p-9">
               <div>
-                <span className="grid h-11 w-11 place-items-center rounded-xl border border-white/12 bg-white/[0.04] text-emerald-400">
+                <div className="flex items-center gap-2.5 text-emerald-400">
                   <Sparkles className="h-5 w-5" />
-                </span>
-                <h3 className="font-display mt-6 text-2xl font-bold tracking-tight text-white">
+                  <span className="text-xs font-medium text-emerald-300">
+                    {language === "fr" ? "Approche directe" : "Direct collaboration"}
+                  </span>
+                </div>
+                <h3 className="font-display mt-4 text-2xl font-bold tracking-tight text-white">
                   {b.soloTitle}
                 </h3>
                 <p className="mt-3 text-base leading-relaxed text-slate-300">
@@ -279,15 +270,11 @@ function BenefitsBentoSection() {
           <Reveal delay={0.08} className="md:col-span-5">
             <article className="studio-card flex h-full flex-col justify-between rounded-[26px] p-7 sm:p-9">
               <div>
-                <div className="flex items-center gap-2.5">
-                  <span className="grid h-11 w-11 place-items-center rounded-xl border border-white/12 bg-white/[0.04] text-cyan-300">
-                    <Smartphone className="h-5 w-5" />
-                  </span>
-                  <span className="grid h-11 w-11 place-items-center rounded-xl border border-white/12 bg-white/[0.04] text-emerald-300">
-                    <ShieldCheck className="h-5 w-5" />
-                  </span>
+                <div className="flex items-center gap-3 text-emerald-400">
+                  <Smartphone className="h-5 w-5 text-cyan-300" />
+                  <ShieldCheck className="h-5 w-5 text-emerald-400" />
                 </div>
-                <h3 className="font-display mt-6 text-2xl font-bold tracking-tight text-white">
+                <h3 className="font-display mt-5 text-2xl font-bold tracking-tight text-white">
                   {b.speedTitle}
                 </h3>
                 <p className="mt-3 text-base leading-relaxed text-slate-300">
@@ -298,30 +285,27 @@ function BenefitsBentoSection() {
               <div className="mt-8 flex flex-wrap gap-3 border-t border-white/10 pt-5">
                 <Link
                   href="/services/responsive-web-design"
-                  className="inline-flex min-h-10 items-center gap-1.5 text-sm font-semibold text-slate-200 transition hover:text-emerald-300"
+                  className="inline-flex min-h-10 items-center text-sm font-semibold text-slate-200 transition hover:text-emerald-300"
                 >
-                  <span>{services[4].title[language]}</span>
-                  <ArrowUpRight className="h-3.5 w-3.5" />
+                  {services[4].title[language]}
                 </Link>
-                <span className="text-slate-400" aria-hidden="true">
+                <span className="self-center text-slate-400" aria-hidden="true">
                   ·
                 </span>
                 <Link
                   href="/services/maintenance-seo"
-                  className="inline-flex min-h-10 items-center gap-1.5 text-sm font-semibold text-emerald-400 transition hover:text-emerald-300"
+                  className="inline-flex min-h-10 items-center text-sm font-semibold text-emerald-400 transition hover:text-emerald-300"
                 >
-                  <span>{services[5].title[language]}</span>
-                  <ArrowUpRight className="h-3.5 w-3.5" />
+                  {services[5].title[language]}
                 </Link>
-                <span className="text-slate-400" aria-hidden="true">
+                <span className="self-center text-slate-400" aria-hidden="true">
                   ·
                 </span>
                 <Link
                   href="/tarifs"
-                  className="inline-flex min-h-10 items-center gap-1.5 text-sm font-semibold text-slate-200 transition hover:text-emerald-300"
+                  className="inline-flex min-h-10 items-center text-sm font-semibold text-slate-200 transition hover:text-emerald-300"
                 >
-                  <span>{language === "fr" ? "Tarifs & Devis" : "Pricing & Scope"}</span>
-                  <ArrowUpRight className="h-3.5 w-3.5" />
+                  {language === "fr" ? "Tarifs & Devis" : "Pricing & Scope"}
                 </Link>
               </div>
             </article>
@@ -353,7 +337,9 @@ function BenefitsBentoSection() {
                           {svc.eyebrow[language]}
                         </p>
                       </div>
-                      <ArrowUpRight className="h-4 w-4 shrink-0 text-slate-400 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-emerald-400" />
+                      <span className="shrink-0 text-xs font-medium text-emerald-400 opacity-80 transition group-hover:opacity-100">
+                        {content.services.explore}
+                      </span>
                     </Link>
                   ))}
                 </div>
@@ -381,21 +367,20 @@ function StatementAndProjectsSection() {
         {/* Bold Full-Width Statement */}
         <Reveal>
           <div className="rounded-[28px] border border-white/12 bg-[#07080b] p-8 shadow-[0_24px_60px_-30px_rgba(0,0,0,0.9)] sm:p-12 lg:p-16">
-            <p className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-emerald-400">
+            <p className="text-xs font-medium text-emerald-400">
               {st.eyebrow}
             </p>
-            <p className="font-display mt-5 max-w-5xl text-balance text-2xl font-bold tracking-[-0.03em] text-white sm:text-4xl lg:text-[2.65rem] lg:leading-[1.15]">
+            <p className="font-display mt-4 max-w-5xl text-balance text-2xl font-bold tracking-[-0.03em] text-white sm:text-4xl lg:text-[2.65rem] lg:leading-[1.15]">
               {st.headline}
             </p>
           </div>
         </Reveal>
 
-        {/* Asymmetrical Alternating 2-Column Client Showcase */}
+        {/* Responsive Bento Project Grid */}
         <div className="mt-20 flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
           <SectionHeader eyebrow={p.eyebrow} title={p.title} text={p.subtitle} />
           <ButtonLink href="/realisations" variant="secondary" className="w-full shrink-0 sm:w-fit">
-            <span>{p.viewAll}</span>
-            <ArrowUpRight className="h-4 w-4" />
+            {p.viewAll}
           </ButtonLink>
         </div>
 
@@ -437,7 +422,7 @@ function StatementAndProjectsSection() {
                   <MapPin className="h-4 w-4 text-emerald-400" />
                   {a.badge}
                 </span>
-                <span className="font-mono text-emerald-400">{siteConfig.city}</span>
+                <span className="font-medium text-emerald-400">{siteConfig.city}</span>
               </div>
             </div>
           </Reveal>
@@ -451,7 +436,7 @@ function StatementAndProjectsSection() {
             </div>
 
             <div className="mt-7">
-              <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-slate-400">
+              <p className="text-xs font-medium text-slate-400">
                 {a.stackTitle}
               </p>
               <div className="mt-3 flex flex-wrap gap-2">
@@ -468,12 +453,10 @@ function StatementAndProjectsSection() {
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <ButtonLink href="/#contact" variant="primary" className="w-full sm:w-auto">
-                <span>{a.cta}</span>
-                <ArrowRight className="h-4 w-4" />
+                {a.cta}
               </ButtonLink>
               <ButtonLink href="/a-propos" variant="secondary" className="w-full sm:w-auto">
-                <span>{a.moreAboutCta}</span>
-                <ArrowUpRight className="h-4 w-4" />
+                {a.moreAboutCta}
               </ButtonLink>
             </div>
           </Reveal>
@@ -503,35 +486,29 @@ function HowItWorksSection() {
               />
               <div className="mt-8">
                 <ButtonLink href="/#contact" variant="primary" className="w-full sm:w-auto">
-                  <span>{pr.cta}</span>
-                  <ArrowUpRight className="h-4 w-4" />
+                  {pr.cta}
                 </ButtonLink>
               </div>
             </Reveal>
           </div>
 
-          <div className="divide-y divide-white/10 rounded-[26px] border border-white/12 bg-[#0e1117] shadow-[0_20px_50px_-28px_rgba(0,0,0,0.9)]">
+          <ol className="divide-y divide-white/10 rounded-[26px] border border-white/12 bg-[#0e1117] shadow-[0_20px_50px_-28px_rgba(0,0,0,0.9)]">
             {workProcessSteps.map((step, index) => (
               <Reveal key={step.step} delay={index * 0.05}>
-                <article className="flex flex-col gap-4 p-5 sm:flex-row sm:items-start sm:gap-7 sm:p-9">
-                  <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-emerald-400/30 bg-emerald-400/10 font-mono text-sm font-semibold text-emerald-300">
-                    {step.step}
-                  </span>
-                  <div>
-                    <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-slate-400">
-                      {pr.stepLabel} {step.step}
-                    </p>
-                    <h3 className="font-display mt-1.5 text-xl font-bold tracking-tight text-white sm:text-2xl">
-                      {step.title[language]}
-                    </h3>
-                    <p className="mt-2.5 max-w-lg text-base leading-relaxed text-slate-300">
-                      {step.description[language]}
-                    </p>
-                  </div>
-                </article>
+                <li className="border-l-2 border-l-transparent p-6 transition hover:border-l-emerald-400 sm:p-9">
+                  <p className="text-xs font-medium text-emerald-400">
+                    {pr.stepLabel} {index + 1}
+                  </p>
+                  <h3 className="font-display mt-2 text-xl font-bold tracking-tight text-white sm:text-2xl">
+                    {step.title[language]}
+                  </h3>
+                  <p className="mt-2.5 max-w-lg text-base leading-relaxed text-slate-300">
+                    {step.description[language]}
+                  </p>
+                </li>
               </Reveal>
             ))}
-          </div>
+          </ol>
         </div>
       </Container>
     </section>
@@ -559,7 +536,7 @@ function TestimonialsSection() {
             <div className="studio-card mt-8 rounded-[24px] p-6 sm:p-7">
               <div className="flex items-center gap-2 text-emerald-400">
                 <Star className="h-4 w-4 fill-emerald-400" />
-                <span className="font-mono text-xs uppercase tracking-[0.18em]">
+                <span className="text-xs font-medium text-emerald-300">
                   Google Profile
                 </span>
               </div>
@@ -605,14 +582,13 @@ function TestimonialsSection() {
               </div>
             ) : null}
 
-            {/* Verified Shipped Deliverables Matrix (never fabricates unverified quotes) */}
             <div className="grid gap-4 sm:grid-cols-2">
               {featuredProjects.map((project, index) => (
                 <Reveal key={project.slug} delay={index * 0.04}>
                   <article className="studio-card flex h-full flex-col justify-between rounded-[22px] p-6">
                     <div>
                       <div className="flex items-center justify-between gap-2">
-                        <span className="font-mono text-xs text-emerald-400">
+                        <span className="text-xs font-medium text-emerald-400">
                           {project.industry[language]}
                         </span>
                         <span className="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-0.5 text-[11px] font-medium text-slate-300">
@@ -624,7 +600,7 @@ function TestimonialsSection() {
                         {project.name}
                       </h3>
 
-                      <p className="mt-2 text-xs font-mono uppercase tracking-[0.16em] text-slate-400">
+                      <p className="mt-2 text-xs font-medium text-slate-400">
                         {tm.deliverableLabel}
                       </p>
                       <p className="mt-1.5 text-sm leading-relaxed text-slate-300">
@@ -748,7 +724,7 @@ function ContactSection() {
       key: "instagram",
       label: c.channels.instagram,
       hint: c.channels.instagramHint,
-      value: "@yssnn_eweb",
+      value: "@yassine.benazzou",
       href: siteConfig.socials.instagram,
       icon: InstagramIcon,
       isPlaceholder: false,
@@ -783,10 +759,10 @@ function ContactSection() {
               </div>
 
               <div className="mt-9">
-                <h3 className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
+                <h3 className="text-xs font-semibold text-slate-300">
                   {c.directTitle}
                 </h3>
-                <p className="mt-1.5 text-sm text-slate-300">{c.directSubtitle}</p>
+                <p className="mt-1.5 text-sm text-slate-400">{c.directSubtitle}</p>
 
                 <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
                   {channels.map((channel) => {
@@ -797,31 +773,29 @@ function ContactSection() {
                         href={channel.href}
                         target={channel.external ? "_blank" : undefined}
                         rel={channel.external ? "noopener noreferrer" : undefined}
-                        className="studio-card group flex min-h-14 items-start gap-3.5 rounded-2xl p-4"
+                        className="studio-card group flex min-h-14 flex-col justify-between gap-2 rounded-2xl p-4"
                       >
-                        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-emerald-400/25 bg-emerald-400/10 text-emerald-300 transition group-hover:bg-emerald-400 group-hover:text-slate-950">
-                          <Icon className="h-4 w-4" />
-                        </span>
-                        <span className="min-w-0 flex-1">
-                          <span className="flex items-center justify-between gap-2">
-                            <span className="text-sm font-semibold text-white">
-                              {channel.label}
-                            </span>
-                            <ArrowUpRight className="h-3.5 w-3.5 shrink-0 text-slate-400 transition group-hover:text-emerald-300" />
+                        <div className="flex items-center justify-between gap-2">
+                          <span className="inline-flex items-center gap-2 text-sm font-semibold text-white">
+                            <Icon className="h-4 w-4 text-emerald-400" />
+                            <span>{channel.label}</span>
                           </span>
-                          <span className="mt-0.5 block truncate text-xs text-slate-300">
-                            {channel.value}
-                          </span>
-                          {channel.isPlaceholder ? (
-                            <span className="mt-1.5 inline-block rounded-md border border-amber-400/25 bg-amber-400/10 px-2 py-0.5 font-mono text-[10px] text-amber-300">
-                              {c.placeholderTag}
-                            </span>
-                          ) : (
-                            <span className="mt-1 block text-[11px] text-slate-400">
-                              {channel.hint}
-                            </span>
-                          )}
+                          {channel.external ? (
+                            <ExternalLink className="h-3.5 w-3.5 shrink-0 text-slate-400 transition group-hover:text-emerald-300" />
+                          ) : null}
+                        </div>
+                        <span className="block truncate text-xs text-slate-300">
+                          {channel.value}
                         </span>
+                        {channel.isPlaceholder ? (
+                          <span className="w-fit rounded-md border border-amber-400/25 bg-amber-400/10 px-2 py-0.5 text-[10px] font-medium text-amber-300">
+                            {c.placeholderTag}
+                          </span>
+                        ) : (
+                          <span className="block text-[11px] text-slate-400">
+                            {channel.hint}
+                          </span>
+                        )}
                       </a>
                     );
                   })}
@@ -849,7 +823,7 @@ export function FinalCta() {
         <div className="studio-card rounded-[28px] p-8 sm:p-12 lg:p-14">
           <div className="grid items-center gap-8 lg:grid-cols-[1.2fr_0.8fr]">
             <div>
-              <p className="font-mono text-xs uppercase tracking-[0.2em] text-emerald-400">
+              <p className="text-xs font-medium text-emerald-400">
                 {c.eyebrow}
               </p>
               <h2 className="font-display mt-3 text-balance text-3xl font-bold tracking-[-0.03em] text-white sm:text-4xl">
@@ -861,8 +835,7 @@ export function FinalCta() {
             </div>
             <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
               <ButtonLink href="/#contact" variant="primary" className="w-full">
-                <span>{content.nav.letsTalk}</span>
-                <ArrowUpRight className="h-4 w-4" />
+                {content.nav.letsTalk}
               </ButtonLink>
               <ButtonLink
                 href={whatsappUrl()}

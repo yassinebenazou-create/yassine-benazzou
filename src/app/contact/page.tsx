@@ -42,7 +42,7 @@ export default function ContactPage() {
     {
       icon: InstagramIcon,
       label: "Instagram",
-      value: "@yssnn_eweb",
+      value: "@yassine.benazzou",
       href: siteConfig.socials.instagram,
       external: true,
       placeholder: false,
@@ -89,21 +89,21 @@ export default function ContactPage() {
                     href={item.href}
                     target={item.external ? "_blank" : undefined}
                     rel={item.external ? "noopener noreferrer" : undefined}
-                    className="studio-card flex items-center gap-4 rounded-2xl p-5"
+                    className="studio-card flex items-center justify-between gap-4 rounded-2xl p-5"
                   >
-                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-emerald-400/20 bg-emerald-400/10 text-emerald-300">
-                      <Icon className="h-5 w-5" />
-                    </span>
-                    <span className="min-w-0 flex-1">
-                      <span className="block text-xs font-medium uppercase tracking-wider text-slate-400">
-                        {item.label}
-                      </span>
-                      <span className="mt-0.5 block truncate text-sm font-semibold text-white">
-                        {item.value}
-                      </span>
-                    </span>
+                    <div className="flex min-w-0 items-center gap-3.5">
+                      <Icon className="h-5 w-5 shrink-0 text-emerald-400" />
+                      <div className="min-w-0">
+                        <span className="block text-xs font-medium text-slate-400">
+                          {item.label}
+                        </span>
+                        <span className="mt-0.5 block truncate text-sm font-semibold text-white">
+                          {item.value}
+                        </span>
+                      </div>
+                    </div>
                     {item.placeholder ? (
-                      <span className="rounded-md border border-amber-400/25 bg-amber-400/10 px-2 py-0.5 font-mono text-[10px] text-amber-300">
+                      <span className="rounded-md border border-amber-400/25 bg-amber-400/10 px-2 py-0.5 text-[10px] font-medium text-amber-300">
                         Config placeholder
                       </span>
                     ) : null}

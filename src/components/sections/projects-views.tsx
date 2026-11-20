@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight, ExternalLink } from "lucide-react";
+import { ArrowLeft, ExternalLink } from "lucide-react";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { useLanguage } from "@/components/language-provider";
 import { ProjectCard } from "@/components/project-card";
@@ -23,8 +23,7 @@ export function ProjectsArchiveView() {
         text={p.subtitle}
       >
         <ButtonLink href="/#contact">
-          <span>{content.subpages.wantSimilar}</span>
-          <ArrowUpRight className="h-4 w-4" />
+          {content.subpages.wantSimilar}
         </ButtonLink>
       </PageHero>
 
@@ -74,8 +73,7 @@ export function ProjectDetailView({ project }: { project: Project }) {
           </ButtonLink>
         ) : null}
         <ButtonLink href="/#contact" variant="secondary">
-          <span>{sub.wantSimilar}</span>
-          <ArrowUpRight className="h-4 w-4" />
+          {sub.wantSimilar}
         </ButtonLink>
       </PageHero>
 

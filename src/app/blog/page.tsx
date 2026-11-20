@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 import { FinalCta } from "@/components/sections/home-sections";
 import { Container, PageHero, SectionHeader } from "@/components/ui";
 import { createMetadata } from "@/lib/seo";
@@ -43,7 +42,7 @@ export default function BlogPage() {
                 )}
               >
                 <div>
-                  <p className="font-mono text-xs uppercase tracking-wider text-emerald-400">
+                  <p className="text-xs font-medium text-emerald-400">
                     Upcoming Note
                   </p>
                   <h2 className="font-display mt-3 max-w-2xl text-xl font-bold leading-snug text-white sm:text-2xl">
@@ -52,10 +51,9 @@ export default function BlogPage() {
                 </div>
                 <Link
                   href="/contact"
-                  className="mt-6 inline-flex min-h-10 items-center gap-1.5 text-sm font-semibold text-emerald-400 transition hover:text-emerald-300"
+                  className="mt-6 inline-flex min-h-10 items-center text-sm font-semibold text-emerald-400 transition hover:text-emerald-300"
                 >
-                  <span>Ask about this topic</span>
-                  <ArrowUpRight className="h-4 w-4" />
+                  Ask about this topic
                 </Link>
               </article>
             ))}

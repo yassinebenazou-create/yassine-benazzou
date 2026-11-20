@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { memo } from "react";
-import { ArrowUpRight, ExternalLink, Eye } from "lucide-react";
+import { ExternalLink, Eye } from "lucide-react";
 import { useLanguage } from "@/components/language-provider";
 import type { Project } from "@/data/projects";
 
@@ -114,19 +114,11 @@ function ProjectCardBase({
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${labels.viewLive}: ${project.name}`}
-              className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-white/12 bg-white/[0.03] text-slate-300 transition duration-200 group-hover:border-emerald-400/45 group-hover:text-emerald-300"
+              className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/12 text-slate-300 transition duration-200 group-hover:border-emerald-400/45 group-hover:text-emerald-300"
             >
               <Eye className="h-4 w-4" />
             </a>
-          ) : (
-            <Link
-              href={`/realisations/${project.slug}`}
-              aria-label={`${labels.caseDetails}: ${project.name}`}
-              className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-white/12 bg-white/[0.03] text-slate-300 transition duration-200 group-hover:border-emerald-400/45 group-hover:text-emerald-300"
-            >
-              <ArrowUpRight className="h-4 w-4" />
-            </Link>
-          )}
+          ) : null}
         </div>
 
         <p className="mt-3 max-w-md flex-1 text-sm leading-relaxed text-slate-300 sm:text-base">
@@ -157,17 +149,16 @@ function ProjectCardBase({
               <ExternalLink className="h-3.5 w-3.5" />
             </a>
           ) : (
-            <span className="font-mono text-xs uppercase tracking-wider text-slate-400">
+            <span className="text-xs font-medium text-slate-400">
               {labels.studioShowcase}
             </span>
           )}
 
           <Link
             href={`/realisations/${project.slug}`}
-            className="inline-flex min-h-10 items-center gap-1.5 text-sm font-medium text-slate-200 transition hover:text-white"
+            className="inline-flex min-h-10 items-center text-sm font-medium text-slate-200 transition hover:text-white"
           >
-            <span>{labels.caseDetails}</span>
-            <ArrowUpRight className="h-3.5 w-3.5" />
+            {labels.caseDetails}
           </Link>
         </div>
       </div>

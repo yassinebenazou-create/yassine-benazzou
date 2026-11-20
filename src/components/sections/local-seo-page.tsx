@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, CheckCircle2, MapPin, MessageCircle, Phone, Star } from "lucide-react";
+import { CheckCircle2, MapPin, MessageCircle, Phone, Star } from "lucide-react";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { JsonLd } from "@/components/json-ld";
@@ -84,8 +84,7 @@ export function LocalSeoPage({
 
       <PageHero eyebrow={`Développeur Web Freelance — ${location}`} title={title} text={text}>
         <ButtonLink href="/contact">
-          <span>Demander un devis gratuit</span>
-          <ArrowRight className="h-4 w-4" />
+          Demander un devis gratuit
         </ButtonLink>
         <ButtonLink href={whatsappUrl()} external variant="secondary">
           <MessageCircle className="h-4 w-4 text-emerald-400" />
@@ -106,7 +105,7 @@ export function LocalSeoPage({
 
               {relatedProject ? (
                 <div className="mt-8 rounded-2xl border border-emerald-400/25 bg-emerald-400/[0.06] p-5">
-                  <p className="font-mono text-xs uppercase tracking-[0.18em] text-emerald-300">
+                  <p className="text-xs font-medium text-emerald-300">
                     Réalisation Portfolio
                   </p>
                   <p className="mt-2 text-sm leading-relaxed text-slate-200">
@@ -114,17 +113,16 @@ export function LocalSeoPage({
                   </p>
                   <Link
                     href={`/realisations/${relatedProject.slug}`}
-                    className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-400 hover:text-emerald-300"
+                    className="mt-3 inline-flex items-center text-sm font-semibold text-emerald-400 hover:text-emerald-300"
                   >
-                    <span>Voir le projet {relatedProject.name}</span>
-                    <ArrowUpRight className="h-4 w-4" />
+                    Voir le projet {relatedProject.name}
                   </Link>
                 </div>
               ) : null}
 
               {/* Consistent Direct Contact & Base Strip */}
               <div className="mt-8 rounded-2xl border border-white/10 bg-[#07080b] p-5">
-                <p className="font-mono text-xs uppercase tracking-[0.18em] text-slate-400">
+                <p className="text-xs font-medium text-slate-400">
                   Coordonnées directes
                 </p>
                 <ul className="mt-3 space-y-2.5 text-sm text-slate-200">
@@ -175,7 +173,7 @@ export function LocalSeoPage({
               </div>
 
               <div className="rounded-[24px] border border-white/10 bg-[#07080b] p-6 sm:p-7">
-                <p className="font-mono text-xs uppercase tracking-[0.18em] text-emerald-400">
+                <p className="text-xs font-medium text-emerald-400">
                   Besoins fréquents — {location}
                 </p>
                 <div className="mt-4 divide-y divide-white/10">
@@ -205,8 +203,7 @@ export function LocalSeoPage({
               text="Chaque projet est développé avec un code propre, une structure SEO claire et une compatibilité mobile soignée."
             />
             <ButtonLink href="/tarifs" variant="secondary" className="w-full shrink-0 sm:w-fit">
-              <span>Voir les formules & devis</span>
-              <ArrowUpRight className="h-4 w-4" />
+              Voir les formules & devis
             </ButtonLink>
           </div>
 
@@ -220,8 +217,7 @@ export function LocalSeoPage({
                 )}
               >
                 <div>
-                  <p className="font-mono text-xs text-emerald-400">{service.number}</p>
-                  <h2 className="font-display mt-3 text-xl font-bold text-white">
+                  <h2 className="font-display text-xl font-bold text-white">
                     {service.title.fr}
                   </h2>
                   <p className="mt-3 text-sm leading-relaxed text-slate-300">
@@ -230,10 +226,9 @@ export function LocalSeoPage({
                 </div>
                 <Link
                   href={`/services/${service.slug}`}
-                  className="mt-6 inline-flex min-h-10 items-center gap-1.5 text-sm font-semibold text-emerald-400 hover:text-emerald-300"
+                  className="mt-6 inline-flex min-h-10 items-center text-sm font-semibold text-emerald-400 hover:text-emerald-300"
                 >
-                  <span>Découvrir ce service</span>
-                  <ArrowUpRight className="h-4 w-4" />
+                  Découvrir ce service
                 </Link>
               </div>
             ))}

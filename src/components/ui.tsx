@@ -30,7 +30,7 @@ export function SectionHeader({
   return (
     <div className={cn("max-w-2xl", align === "center" && "mx-auto text-center")}>
       {eyebrow ? (
-        <p className="mb-3 inline-flex items-center gap-2 font-mono text-xs font-medium uppercase tracking-[0.2em] text-emerald-400">
+        <p className="mb-3 inline-flex items-center gap-2 text-xs font-medium text-emerald-400">
           <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" aria-hidden="true" />
           {eyebrow}
         </p>
@@ -101,7 +101,7 @@ export function PageHero({
     <section className="border-b border-white/10 bg-[#07080b] pt-28 sm:pt-32">
       <Container className="py-20 sm:py-24">
         <div className="max-w-3xl">
-          <p className="mb-4 inline-flex items-center gap-2 font-mono text-xs font-medium uppercase tracking-[0.2em] text-emerald-400">
+          <p className="mb-4 inline-flex items-center gap-2 text-xs font-medium text-emerald-400">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" aria-hidden="true" />
             {eyebrow}
           </p>

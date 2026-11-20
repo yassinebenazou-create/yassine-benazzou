@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight, CheckCircle2 } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { useLanguage } from "@/components/language-provider";
 import { Reveal } from "@/components/reveal";
@@ -18,8 +18,7 @@ export function ServicesArchiveView() {
     <>
       <PageHero eyebrow={s.eyebrow} title={s.title} text={s.subtitle}>
         <ButtonLink href="/#contact">
-          <span>{s.inquire}</span>
-          <ArrowUpRight className="h-4 w-4" />
+          {s.inquire}
         </ButtonLink>
       </PageHero>
 
@@ -66,8 +65,7 @@ export function ServiceDetailView({ service }: { service: Service }) {
         text={service.description[language]}
       >
         <ButtonLink href="/#contact">
-          <span>{content.services.inquire}</span>
-          <ArrowUpRight className="h-4 w-4" />
+          {content.services.inquire}
         </ButtonLink>
       </PageHero>
 

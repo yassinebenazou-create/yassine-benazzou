@@ -35,7 +35,7 @@ export const siteConfig = {
   markets: ["Morocco", "France", "Belgium", "Canada", "UAE", "Worldwide"],
   socials: {
     linkedin: "https://www.linkedin.com/in/yassine-benazzou-4956b4384/",
-    instagram: "https://www.instagram.com/yssnn_eweb?xtok=bjkzd2IyeG9seGM=",
+    instagram: "https://www.instagram.com/yassine.benazzou/",
     facebook: "https://www.facebook.com/profile.php?id=100075906982295",
     googleReview: "https://g.page/r/CXEOWiILca0uEAE/review",
     portfolio: `${siteUrl}/`,

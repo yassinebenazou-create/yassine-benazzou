@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { BrandLogo } from "@/components/brand-logo";
@@ -87,10 +87,9 @@ export function Navbar() {
           <LanguageSwitcher />
           <Link
             href="/#contact"
-            className="group inline-flex min-h-11 items-center gap-1.5 rounded-full bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-[0_10px_28px_-10px_rgba(52,211,153,0.6)] transition duration-200 hover:-translate-y-0.5 hover:scale-[1.03] hover:bg-emerald-300 active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+            className="inline-flex min-h-11 items-center rounded-full bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-[0_10px_28px_-10px_rgba(52,211,153,0.6)] transition duration-200 hover:-translate-y-0.5 hover:scale-[1.03] hover:bg-emerald-300 active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
           >
-            <span>{content.nav.letsTalk}</span>
-            <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            {content.nav.letsTalk}
           </Link>
         </div>
 
@@ -122,20 +121,18 @@ export function Navbar() {
                 key={link.key}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="flex min-h-12 items-center justify-between rounded-2xl border border-transparent px-4 text-base font-medium text-slate-200 transition hover:border-white/10 hover:bg-white/[0.05] hover:text-white"
+                className="flex min-h-12 items-center rounded-2xl border border-transparent px-4 text-base font-medium text-slate-200 transition hover:border-white/10 hover:bg-white/[0.05] hover:text-white"
               >
-                <span>{labels[link.key]}</span>
-                <ArrowUpRight className="h-4 w-4 text-slate-400" />
+                {labels[link.key]}
               </Link>
             ))}
             <div className="mt-3 border-t border-white/10 pt-3">
               <Link
                 href="/#contact"
                 onClick={() => setOpen(false)}
-                className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-emerald-400 px-5 text-sm font-semibold text-slate-950 transition hover:bg-emerald-300"
+                className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-emerald-400 px-5 text-sm font-semibold text-slate-950 transition hover:bg-emerald-300"
               >
-                <span>{content.nav.letsTalk}</span>
-                <ArrowUpRight className="h-4 w-4" />
+                {content.nav.letsTalk}
               </Link>
             </div>
           </div>

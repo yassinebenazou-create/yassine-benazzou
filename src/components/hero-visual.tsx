@@ -18,9 +18,8 @@ export function HeroVisual() {
 
   return (
     <motion.div
-      initial={reduceMotion ? false : { opacity: 0, y: 18 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.65, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+      initial={false}
+      animate={reduceMotion ? undefined : { y: 0 }}
       className="relative mx-auto w-full max-w-xl lg:max-w-none"
     >
       <div className="overflow-hidden rounded-[26px] border border-white/12 bg-[#0e1118] shadow-[0_28px_75px_-30px_rgba(0,0,0,0.95)]">
@@ -30,11 +29,11 @@ export function HeroVisual() {
             <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
             <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
             <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
-            <span className="ml-2 font-mono text-xs text-slate-300">
+            <span className="ml-2 text-xs font-medium text-slate-300">
               {visual.headerTitle}
             </span>
           </div>
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/25 bg-emerald-400/10 px-2.5 py-0.5 font-mono text-[11px] font-medium text-emerald-300">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/25 bg-emerald-400/10 px-2.5 py-0.5 text-[11px] font-medium text-emerald-300">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
             {visual.statusBadge}
           </span>

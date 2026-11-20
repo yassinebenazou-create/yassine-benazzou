@@ -1,4 +1,4 @@
-import { ArrowUpRight, CheckCircle2 } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import Image from "next/image";
 import { JsonLd } from "@/components/json-ld";
 import { FinalCta } from "@/components/sections/home-sections";
@@ -34,12 +34,10 @@ export default function AboutPage() {
         text="I'm Yassine Benazzou, an independent web developer and web designer based in El Jadida serving businesses in Morocco and worldwide."
       >
         <ButtonLink href="/contact">
-          <span>Book a Discovery Call</span>
-          <ArrowUpRight className="h-4 w-4" />
+          Book a Discovery Call
         </ButtonLink>
         <ButtonLink href="/realisations" variant="secondary">
-          <span>Browse Selected Work</span>
-          <ArrowUpRight className="h-4 w-4" />
+          Browse Selected Work
         </ButtonLink>
       </PageHero>
 
@@ -101,23 +99,21 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="divide-y divide-white/10 rounded-[26px] border border-white/12 bg-[#0e1117]">
-              {workProcessSteps.map((step) => (
-                <div key={step.step} className="flex gap-6 p-6 sm:p-8">
-                  <span className="font-mono text-sm font-semibold text-emerald-400">
-                    {step.step}
-                  </span>
-                  <div>
-                    <h3 className="font-display text-xl font-bold text-white">
-                      {step.title.en}
-                    </h3>
-                    <p className="mt-2 max-w-lg text-sm leading-relaxed text-slate-300 sm:text-base">
-                      {step.description.en}
-                    </p>
-                  </div>
-                </div>
+            <ol className="divide-y divide-white/10 rounded-[26px] border border-white/12 bg-[#0e1117]">
+              {workProcessSteps.map((step, index) => (
+                <li key={step.step} className="p-6 sm:p-8">
+                  <p className="text-xs font-medium text-emerald-400">
+                    Step {index + 1}
+                  </p>
+                  <h3 className="font-display mt-1.5 text-xl font-bold text-white">
+                    {step.title.en}
+                  </h3>
+                  <p className="mt-2 max-w-lg text-sm leading-relaxed text-slate-300 sm:text-base">
+                    {step.description.en}
+                  </p>
+                </li>
               ))}
-            </div>
+            </ol>
           </div>
         </Container>
       </section>

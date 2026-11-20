@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, Inter, JetBrains_Mono } from "next/font/google";
+import { Bricolage_Grotesque, JetBrains_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import { FloatingContact } from "@/components/floating-contact";
 import { Footer } from "@/components/footer";
 import { JsonLd } from "@/components/json-ld";
@@ -15,9 +15,10 @@ const bricolageDisplay = Bricolage_Grotesque({
   weight: ["600", "700", "800"],
 });
 
-const interSans = Inter({
+const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -71,7 +72,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${bricolageDisplay.variable} ${interSans.variable} ${jetbrainsMono.variable} h-full antialiased`}
+      className={`${bricolageDisplay.variable} ${plusJakartaSans.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-[#07080b] text-slate-100">
         <LanguageProvider>
