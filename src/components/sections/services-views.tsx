@@ -113,6 +113,12 @@ export function ServiceDetailView({ service }: { service: Service }) {
     { name: service.title[language], href: `/services/${service.slug}` },
   ];
 
+  const matchingProjects = featuredProjects.filter(
+    (p) => p.relatedServiceSlug === service.slug,
+  );
+  const displayProjects =
+    matchingProjects.length > 0 ? matchingProjects.slice(0, 3) : featuredProjects.slice(0, 2);
+
   return (
     <>
       <PageHero
@@ -120,7 +126,10 @@ export function ServiceDetailView({ service }: { service: Service }) {
         title={service.title[language]}
         text={service.description[language]}
       >
-        <ButtonLink href="/#contact">
+        <ButtonLink href="/devis">
+          {language === "fr" ? "Estimer mon projet" : "Estimate My Project"}
+        </ButtonLink>
+        <ButtonLink href="/contact" variant="secondary">
           {content.services.inquire}
         </ButtonLink>
       </PageHero>
@@ -146,6 +155,31 @@ export function ServiceDetailView({ service }: { service: Service }) {
                   <CheckCircle2 className="h-5 w-5 text-emerald-400" />
                   <p className="mt-4 text-base font-semibold text-white">{feature}</p>
                 </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-16 border-t border-white/10 pt-14">
+            <p className="text-xs font-medium text-emerald-400">
+              {language === "fr" ? "Études de cas associées" : "Related Case Studies"}
+            </p>
+            <div className="mt-5 grid gap-4 md:grid-cols-3">
+              {displayProjects.map((project) => (
+                <Link
+                  key={project.slug}
+                  href={`/realisations/${project.slug}`}
+                  className="studio-card group rounded-2xl p-5"
+                >
+                  <span className="block text-xs font-medium text-emerald-400">
+                    {project.projectType[language]}
+                  </span>
+                  <span className="font-display mt-1.5 block text-lg font-bold text-white transition group-hover:text-emerald-300">
+                    {project.name}
+                  </span>
+                  <span className="mt-2 block text-xs leading-relaxed text-slate-300">
+                    {project.summary[language]}
+                  </span>
+                </Link>
               ))}
             </div>
           </div>

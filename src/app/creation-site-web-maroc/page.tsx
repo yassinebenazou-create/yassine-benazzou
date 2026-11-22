@@ -48,6 +48,11 @@ export default function Page() {
           need: "Disposer d'une vitrine bilingue FR/EN rapide et crédible pour convaincre en Europe, au Canada ou aux EAU.",
         },
       ]}
+      relatedProjects={[
+        { name: "Nutritionniste Agadir", slug: "nutritionniste-agadir", industry: "Santé & Nutrition" },
+        { name: "Gosto Store", slug: "gostostore", industry: "E-commerce & Mobilité" },
+        { name: "Eleva Design", slug: "eleva-design", industry: "Architecture Intérieure" },
+      ]}
       relatedGuide={{
         title: "Comparatif : Freelance ou Agence Web Maroc",
         href: "/blog/freelance-ou-agence-web-maroc",

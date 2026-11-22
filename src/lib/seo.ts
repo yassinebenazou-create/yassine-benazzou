@@ -229,3 +229,40 @@ export function articleJsonLd({
     },
   };
 }
+
+export function caseStudyJsonLd({
+  name,
+  description,
+  path,
+  image,
+  genre,
+  keywords,
+  liveUrl,
+}: {
+  name: string;
+  description: string;
+  path: string;
+  image: string;
+  genre: string;
+  keywords: string[];
+  liveUrl?: string;
+}) {
+  const url = absoluteUrl(path);
+  const resolvedImage = image.endsWith(".svg") ? "/opengraph-image" : image;
+  return {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name,
+    description,
+    url,
+    mainEntityOfPage: url,
+    image: absoluteUrl(resolvedImage),
+    genre,
+    keywords: keywords.join(", "),
+    inLanguage: ["en", "fr"],
+    creator: {
+      "@id": `${siteConfig.url}/#person`,
+    },
+    ...(liveUrl ? { sameAs: liveUrl } : {}),
+  };
+}

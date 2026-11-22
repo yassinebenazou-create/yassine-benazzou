@@ -6,6 +6,7 @@ import { JsonLd } from "@/components/json-ld";
 import { FinalCta } from "@/components/sections/home-sections";
 import { ButtonLink, Container, PageHero, SectionHeader } from "@/components/ui";
 import { siteConfig, whatsappUrl } from "@/config/site";
+import { featuredProjects } from "@/data/projects";
 import { services } from "@/data/services";
 import { breadcrumbJsonLd, createMetadata, faqJsonLd, localServiceJsonLd } from "@/lib/seo";
 
@@ -237,6 +238,47 @@ export default function FranceLandingPage() {
       </section>
 
       <section className="border-b border-white/10 bg-[#0b0d12] py-20 sm:py-24">
+        <Container>
+          <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+            <SectionHeader
+              eyebrow="Études de Cas Récentes"
+              title="Exemples de Sites Next.js & React en Production"
+              text="Consultez le détail technique et l'architecture de projets déjà livrés avant de lancer le vôtre."
+            />
+            <ButtonLink href="/realisations" variant="secondary" className="w-full shrink-0 sm:w-fit">
+              Toutes les études de cas
+            </ButtonLink>
+          </div>
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {featuredProjects
+              .filter((p) => ["eleva-design", "customcar", "atlasquad"].includes(p.slug))
+              .map((project) => (
+                <Link
+                  key={project.slug}
+                  href={`/realisations/${project.slug}`}
+                  className="studio-card group flex flex-col justify-between rounded-[22px] p-6"
+                >
+                  <div>
+                    <p className="text-xs font-medium text-emerald-400">
+                      {project.projectType.fr}
+                    </p>
+                    <h3 className="font-display mt-2 text-xl font-bold text-white transition group-hover:text-emerald-300">
+                      {project.name}
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed text-slate-300">
+                      {project.summary.fr}
+                    </p>
+                  </div>
+                  <span className="mt-5 inline-flex text-xs font-semibold text-emerald-400">
+                    Voir l&apos;étude de cas
+                  </span>
+                </Link>
+              ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-b border-white/10 bg-[#07080b] py-20 sm:py-24">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.4fr_0.6fr] lg:gap-16">
             <SectionHeader

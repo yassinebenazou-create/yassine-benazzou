@@ -41,6 +41,7 @@ export function LocalSeoPage({
   serviceSlugs,
   localUseCases,
   relatedProject,
+  relatedProjects,
   relatedGuide,
   faqs,
 }: {
@@ -60,6 +61,11 @@ export function LocalSeoPage({
     slug: string;
     note: string;
   };
+  relatedProjects?: {
+    name: string;
+    slug: string;
+    industry: string;
+  }[];
   relatedGuide?: {
     title: string;
     href: string;
@@ -121,8 +127,29 @@ export function LocalSeoPage({
                     href={`/realisations/${relatedProject.slug}`}
                     className="mt-3 inline-flex items-center text-sm font-semibold text-emerald-400 hover:text-emerald-300"
                   >
-                    Voir le projet {relatedProject.name}
+                    Voir l&apos;étude de cas {relatedProject.name}
                   </Link>
+                </div>
+              ) : null}
+
+              {relatedProjects && relatedProjects.length > 0 ? (
+                <div className="mt-8 rounded-2xl border border-emerald-400/25 bg-emerald-400/[0.05] p-5">
+                  <p className="text-xs font-medium text-emerald-300">
+                    Études de cas livrées au Maroc
+                  </p>
+                  <ul className="mt-3 space-y-2.5 text-sm">
+                    {relatedProjects.map((proj) => (
+                      <li key={proj.slug}>
+                        <Link
+                          href={`/realisations/${proj.slug}`}
+                          className="flex items-center justify-between gap-2 text-slate-200 transition hover:text-emerald-300"
+                        >
+                          <span className="font-semibold text-white">{proj.name}</span>
+                          <span className="text-xs text-slate-400">{proj.industry}</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               ) : null}
 
