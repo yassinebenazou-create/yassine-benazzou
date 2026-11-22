@@ -24,6 +24,7 @@ export async function generateMetadata({ params }: { params: Params }) {
 
   return createMetadata({
     title: article.title,
+    absoluteTitle: article.metaTitle,
     description: article.seoDescription,
     path: `/blog/${article.slug}`,
     locale: "fr_FR",
@@ -118,9 +119,9 @@ export default async function BlogArticlePage({ params }: { params: Params }) {
             ))}
           </div>
 
-          <aside className="mt-12 grid gap-4 rounded-[24px] border border-emerald-400/20 bg-emerald-400/[0.04] p-6 sm:grid-cols-2 sm:p-8">
+          <aside className="mt-12 grid gap-6 rounded-[24px] border border-emerald-400/20 bg-emerald-400/[0.04] p-6 sm:grid-cols-2 sm:p-8">
             <div>
-              <p className="text-xs font-medium text-emerald-400">Ressource liée</p>
+              <p className="text-xs font-medium text-emerald-400">Service associé</p>
               <Link
                 href={`/services/${article.relatedServiceSlug}`}
                 className="mt-2 inline-flex items-center gap-2 text-base font-semibold text-white transition hover:text-emerald-300"
@@ -128,12 +129,20 @@ export default async function BlogArticlePage({ params }: { params: Params }) {
                 <span>{article.relatedServiceLabel}</span>
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
+              <div className="mt-3">
+                <Link
+                  href={article.relatedLandingHref}
+                  className="text-sm font-medium text-emerald-300 underline underline-offset-4 transition hover:text-emerald-200"
+                >
+                  {article.relatedLandingLabel}
+                </Link>
+              </div>
             </div>
             <div>
-              <p className="text-xs font-medium text-emerald-400">Pour aller plus loin</p>
+              <p className="text-xs font-medium text-emerald-400">Passer à l&apos;action</p>
               <div className="mt-2 flex flex-wrap gap-3">
-                <ButtonLink href={article.relatedLandingHref} variant="secondary" className="min-h-10 px-4 text-xs">
-                  {article.relatedLandingLabel}
+                <ButtonLink href={article.secondaryLandingHref} variant="secondary" className="min-h-10 px-4 text-xs">
+                  {article.secondaryLandingLabel}
                 </ButtonLink>
                 <ButtonLink href="/contact" className="min-h-10 px-4 text-xs">
                   Demander un devis

@@ -29,11 +29,11 @@ const enTranslations = {
     },
     hero: {
       available: "Available for freelance projects",
-      location: "Morocco · Worldwide",
-      identity: "Yassine Benazzou · Freelance Web Developer & Designer Morocco",
-      headline: "Freelance Web Developer Building Business Websites in Morocco.",
+      location: "Morocco · France · Worldwide",
+      identity: "Yassine Benazzou · Freelance Web & Next.js Developer",
+      headline: "Freelance Web & Next.js Developer for Business Websites.",
       description:
-        "I provide professional website design and Next.js development for small businesses and founders in Morocco and worldwide.",
+        "Bespoke website design and Next.js development for companies, PMEs, and founders in Morocco, France, and worldwide.",
       primaryCta: "Request a Website Quote",
       secondaryCta: "View Selected Projects",
       visual: {

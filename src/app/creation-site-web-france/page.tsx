@@ -10,19 +10,18 @@ import { services } from "@/data/services";
 import { breadcrumbJsonLd, createMetadata, faqJsonLd, localServiceJsonLd } from "@/lib/seo";
 
 export const metadata = createMetadata({
-  title: "Développeur Web Freelance France | Création Site Internet",
+  title: "Développeur Web Freelance France",
+  absoluteTitle: "Développeur Web Freelance France | Yassine Benazzou",
   description:
-    "Développeur web freelance Next.js & designer UI collaborant à distance avec PME, startups et indépendants en France : site vitrine, refonte, SEO technique et Core Web Vitals.",
+    "Développeur web freelance Next.js travaillant à distance pour les PME en France : création site internet France, refonte, performance web et SEO technique.",
   path: "/creation-site-web-france",
   locale: "fr_FR",
   keywords: [
     "développeur web freelance France",
     "création site internet France",
+    "développeur web freelance pour PME",
+    "création site web professionnel",
     "freelance développeur Next.js",
-    "développeur web indépendant",
-    "refonte site internet",
-    "création site vitrine",
-    "création site e-commerce",
   ],
 });
 
@@ -63,24 +62,24 @@ const franceUseCases = [
 
 const franceFaqs = [
   {
-    question: "Comment se déroule la collaboration à distance avec une entreprise en France ?",
+    question: "Comment travaille un développeur web freelance basé au Maroc avec une PME en France ?",
     answer:
-      "Le projet débute par un appel vidéo de cadrage, suivi d'un devis détaillé en euros et d'étapes validées sur un environnement de prévisualisation hébergé en ligne jusqu'à la livraison.",
+      "Basé à El Jadida (0 à 1 heure d'écart selon la saison), je pilote le projet en français par visioconférence avec un lien de prévisualisation continu jusqu'à la mise en production.",
   },
   {
     question: "Disposez-vous d'un bureau physique en France ?",
     answer:
-      "Non — mon studio indépendant est basé à El Jadida, au Maroc, et j'accompagne des clients en France 100 % à distance avec des créneaux alignés sur les horaires de bureau européens.",
+      "Non — mon studio indépendant est basé à El Jadida, au Maroc, et j'accompagne les entreprises en France 100 % à distance sur les horaires de bureau européens.",
+  },
+  {
+    question: "Pourquoi choisir Next.js pour une création de site internet professionnel en France ?",
+    answer:
+      "Next.js délivre des pages pré-rendues rapides sur mobile et desktop, conformes aux exigences Core Web Vitals de Google et plus sûres qu'un empilement de plugins.",
   },
   {
     question: "Pouvez-vous reprendre ou refondre un site WordPress ou React existant sans perte SEO ?",
     answer:
-      "Oui. Avant toute refonte de site internet, les URLs indexées, titres, descriptions et redirections 301 nécessaires sont vérifiés pour préserver votre positionnement Google.",
-  },
-  {
-    question: "Dans quels délais démarre un projet ?",
-    answer:
-      "Après validation du périmètre et du calendrier lors du premier échange, le démarrage s'effectue rapidement avec des points réguliers jusqu'à la mise en production.",
+      "Oui. Avant toute refonte de site internet, les URLs indexées, balises meta et redirections nécessaires sont vérifiées pour préserver votre visibilité Google.",
   },
 ];
 
@@ -106,9 +105,9 @@ export default function FranceLandingPage() {
       <JsonLd data={faqJsonLd(franceFaqs)} />
 
       <PageHero
-        eyebrow="France · Collaboration Remote Directe"
-        title="Développeur Web Freelance Next.js pour Entreprises en France."
-        text="Création de site internet professionnel, refonte complète et développement sur mesure à distance depuis El Jadida (Maroc), sur des créneaux horaires compatibles avec vos équipes."
+        eyebrow="France · Développeur Freelance à Distance"
+        title="Développeur Web Freelance France & Création de Site Internet."
+        text="Création de site web professionnel, site vitrine Next.js et refonte pour PME en France, réalisés à distance depuis le Maroc en interlocuteur direct."
       >
         <ButtonLink href="/contact">
           Demander un devis
@@ -126,7 +125,7 @@ export default function FranceLandingPage() {
             <div>
               <SectionHeader
                 eyebrow="Partenaire Technique Indépendant"
-                title="Qualité Studio & Exécution Next.js Sans Lourdeur d'Agence"
+                title="Exécution Next.js & Design Web Sur Mesure en Interlocuteur Direct"
                 text="Que vous lanciez un nouveau produit ou souhaitiez moderniser un site vitrine existant, chaque décision privilégie la clarté éditoriale, la rapidité mobile et l'indexation Google."
               />
 

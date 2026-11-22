@@ -11,12 +11,12 @@ export const frTranslations = {
   },
   hero: {
     available: "Disponible pour vos projets web",
-    location: "Maroc · International",
-    identity: "Yassine Benazzou · Développeur & Web Designer Freelance Maroc",
-    headline: "Développeur Web Freelance : Sites Sur Mesure au Maroc.",
+    location: "Maroc · France · International",
+    identity: "Yassine Benazzou · Développeur Web & Next.js Freelance",
+    headline: "Développeur Web & Next.js Freelance pour Projets Professionnels.",
     description:
-      "Création de site internet professionnel et développement Next.js pour PME et entrepreneurs au Maroc et à l'étranger.",
-    primaryCta: "Demander un Devis Gratuit",
+      "Conception UI et développement web Next.js sur mesure pour entreprises et PME au Maroc, en France et à l'international.",
+    primaryCta: "Demander un Devis",
     secondaryCta: "Voir les Projets Clients",
     visual: {
       headerTitle: "Projets Clients Réalisés",

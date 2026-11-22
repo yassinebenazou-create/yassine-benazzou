@@ -3,8 +3,9 @@ import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
   title: "Création site web El Jadida",
+  absoluteTitle: "Création Site Web El Jadida | Yassine Benazzou",
   description:
-    "Développeur web freelance basé à El Jadida : création de site vitrine, boutique e-commerce, design responsive et accompagnement local direct.",
+    "Création site web El Jadida par un développeur freelance sur place : site vitrine, boutique e-commerce, design responsive et rendez-vous direct.",
   path: "/creation-site-web-el-jadida",
   locale: "fr_MA",
   keywords: [

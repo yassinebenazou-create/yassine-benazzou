@@ -85,7 +85,7 @@ export function LocalSeoPage({
 
       <PageHero eyebrow={`Développeur Web Freelance — ${location}`} title={title} text={text}>
         <ButtonLink href="/contact">
-          Demander un devis gratuit
+          Demander un devis
         </ButtonLink>
         <ButtonLink href={whatsappUrl()} external variant="secondary">
           <MessageCircle className="h-4 w-4 text-emerald-400" />

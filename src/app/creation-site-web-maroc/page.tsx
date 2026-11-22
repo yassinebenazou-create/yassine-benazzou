@@ -3,16 +3,17 @@ import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
   title: "Création site web Maroc",
+  absoluteTitle: "Création Site Web Maroc | Développeur Web Freelance",
   description:
-    "Développeur web freelance au Maroc : création de site internet professionnel, site vitrine Next.js, boutique e-commerce et SEO technique.",
+    "Création site web pour entreprise au Maroc avec un développeur web freelance : vitrine Next.js, e-commerce et devis création site web Maroc sur mesure.",
   path: "/creation-site-web-maroc",
   locale: "fr_MA",
   keywords: [
-    "Création site web Maroc",
-    "Développeur web freelance Maroc",
-    "Développeur web au Maroc",
-    "Web designer freelance Maroc",
-    "Création site internet professionnel",
+    "création site web Maroc",
+    "développeur web freelance Maroc",
+    "freelance création site web Maroc",
+    "devis création site web Maroc",
+    "création site web pour entreprise au Maroc",
   ],
 });
 
@@ -22,8 +23,8 @@ export default function Page() {
       location="Maroc"
       areaServed="Morocco"
       path="/creation-site-web-maroc"
-      title="Création de site web au Maroc"
-      text="Développeur web freelance basé à El Jadida : création de sites vitrines Next.js, boutiques e-commerce et plateformes bilingues pour entreprises au Maroc."
+      title="Création de Site Web au Maroc par un Développeur Freelance"
+      text="Freelance création site web Maroc basé à El Jadida : création de site web pour entreprise au Maroc sous Next.js ou WordPress, avec devis clair et suivi direct."
       collaborationNote="Accompagnement National · Maroc"
       approachTitle="Un développeur Full Stack freelance pour vos projets au Maroc"
       approachText="Travaillez en direct avec un interlocuteur unique, sans couches commerciales, pour concevoir un site rapide, lisible sur mobile et structuré pour Google."

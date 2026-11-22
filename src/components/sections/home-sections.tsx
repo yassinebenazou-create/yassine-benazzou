@@ -124,7 +124,15 @@ function TrustBarSection() {
               {t.label}
             </p>
             <p className="mt-1 text-sm font-medium text-slate-200">
-              {t.marketsSummary}
+              {t.marketsSummary}{" "}
+              <span className="text-slate-500" aria-hidden="true">·</span>{" "}
+              <Link href="/creation-site-web-maroc" className="text-emerald-300 underline-offset-4 hover:underline">
+                Maroc
+              </Link>{" "}
+              <span className="text-slate-500" aria-hidden="true">/</span>{" "}
+              <Link href="/creation-site-web-france" className="text-emerald-300 underline-offset-4 hover:underline">
+                France
+              </Link>
             </p>
           </div>
 

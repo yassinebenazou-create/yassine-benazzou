@@ -4,19 +4,18 @@ import { faqItems } from "@/data/faq";
 import { createMetadata, faqJsonLd } from "@/lib/seo";
 
 export const metadata = createMetadata({
-  title: "Freelance Web Developer Morocco",
-  absoluteTitle: "Freelance Web Developer Morocco | Yassine Benazzou",
+  title: "Freelance Web & Next.js Developer",
+  absoluteTitle: "Freelance Web & Next.js Developer | Yassine Benazzou",
   description:
-    "Freelance web developer and web designer in Morocco building Next.js websites, business sites, and e-commerce platforms for local and global clients.",
+    "Freelance web and Next.js developer building custom business websites, SaaS marketing sites, and e-commerce platforms for Morocco, France, and worldwide.",
   path: "/",
   keywords: [
-    "Freelance Web Developer Morocco",
-    "Web Developer Morocco",
-    "Web Designer Morocco",
-    "Website Development Morocco",
+    "développeur web freelance",
+    "développeur Next.js freelance",
+    "freelance développeur web",
+    "freelance Next.js pour projet professionnel",
+    "Freelance Web Developer",
     "Freelance Next.js Developer",
-    "Développeur web freelance Maroc",
-    "Création site web Maroc",
   ],
 });
 

@@ -2,16 +2,17 @@ import { LocalSeoPage } from "@/components/sections/local-seo-page";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
-  title: "Création site web Casablanca",
+  title: "Création site internet Casablanca",
+  absoluteTitle: "Création Site Internet Casablanca | Yassine Benazzou",
   description:
-    "Développeur Full Stack et web designer freelance pour Casablanca : refonte de site web, landing pages Next.js et boutiques e-commerce sur mesure.",
+    "Création site internet Casablanca par un développeur web freelance : sites vitrines Next.js, refontes et boutiques e-commerce pour PME et startups.",
   path: "/creation-site-web-casablanca",
   locale: "fr_MA",
   keywords: [
-    "Création site web Casablanca",
-    "Développeur Full Stack freelance",
-    "Développeur web freelance Maroc",
-    "Création site internet professionnel",
+    "création site internet Casablanca",
+    "création site web Casablanca",
+    "développeur Full Stack freelance",
+    "développeur web freelance Maroc",
   ],
 });
 
@@ -21,11 +22,11 @@ export default function Page() {
       location="Casablanca"
       areaServed="Casablanca, Morocco"
       path="/creation-site-web-casablanca"
-      title="Création de site web à Casablanca"
+      title="Création de site internet à Casablanca"
       text="Accompagnement dédié aux PME, startups et équipes B2B de Casablanca souhaitant un site Next.js rapide, une refonte complète ou une landing page orientée conversion."
       collaborationNote="Axe El Jadida – Casablanca · Suivi Réactif"
       approachTitle="Des interfaces B2B et e-commerce taillées pour Casablanca"
-      approachText="Depuis El Jadida, je collabore en direct (à distance ou sur rendez-vous sur l'axe Casablanca) avec des entreprises exigeantes qui cherchent la qualité studio sans lourdeur d'agence."
+      approachText="Depuis El Jadida, je collabore en interlocuteur direct (à distance ou sur rendez-vous sur l'axe Casablanca) avec des entreprises exigeantes qui recherchent rapidité et fiabilité."
       highlights={[
         "Refonte complète de sites vieillissants sans perte de liens ni de SEO",
         "Landing pages rapides conçues pour rentabiliser vos campagnes Meta et Google Ads",

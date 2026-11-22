@@ -7,6 +7,7 @@ export type BlogSection = {
 export type BlogArticle = {
   slug: string;
   title: string;
+  metaTitle: string;
   seoDescription: string;
   category: string;
   publishedAt: string;
@@ -18,57 +19,64 @@ export type BlogArticle = {
   relatedServiceLabel: string;
   relatedLandingHref: string;
   relatedLandingLabel: string;
+  secondaryLandingHref: string;
+  secondaryLandingLabel: string;
 };
 
 export const blogArticles: BlogArticle[] = [
   {
     slug: "combien-coute-creation-site-web-maroc",
     title: "Combien coûte la création d'un site web au Maroc ?",
+    metaTitle: "Prix Création Site Web Maroc | Yassine Benazzou",
     seoDescription:
-      "Comprendre ce qui détermine le budget d'un site web au Maroc : site vitrine, boutique e-commerce, Next.js vs WordPress et critères à vérifier avant de signer un devis.",
+      "Comprendre le prix création site web Maroc et tarif création site web Maroc : Next.js ou WordPress, critères techniques et devis création site web Maroc.",
     category: "Budget & Cadrage · Maroc",
     publishedAt: "2026-11-22",
     updatedAt: "2026-11-22",
     readingTime: "3 min",
     intro:
-      "Comparer deux devis de création de site internet au Maroc uniquement sur le prix final mène souvent à des surprises : template peu personnalisé, lenteur sur mobile ou absence de bases SEO. Le coût réel dépend surtout du périmètre fonctionnel et du niveau d'accompagnement.",
+      "Évaluer le prix d'une création de site web au Maroc uniquement sur le montant le plus bas conduit souvent à des blocages : modèle figé, lenteur sur smartphone ou absence de bases SEO. Le tarif réel dépend surtout du périmètre fonctionnel, de la technologie choisie et du suivi.",
     sections: [
       {
-        heading: "1. Les trois grands types de projets web",
+        heading: "1. Les trois grands types de projets web au Maroc",
         paragraphs: [
-          "Un site vitrine d'entreprise vise à présenter vos services clairement, inspirer confiance et déclencher des demandes via formulaire ou WhatsApp. C'est la base la plus adaptée aux cabinets, artisans, PME et sociétés de services.",
-          "Une boutique e-commerce ajoute la gestion d'un catalogue, des fiches produits, du panier, des modes de paiement ou de livraison à la livraison et du suivi des commandes. Une application ou vitrine bilingue sur mesure (FR/EN) implique quant à elle un travail supplémentaire de structure et d'intégration.",
+          "Un site vitrine d'entreprise vise à présenter vos services clairement, inspirer confiance et déclencher des demandes via formulaire ou WhatsApp. C'est le format le plus adapté aux cabinets, PME, artisans et sociétés de services.",
+          "Une boutique e-commerce ajoute la gestion d'un catalogue, des fiches produits, du panier et du suivi des commandes. Une vitrine bilingue FR/EN sur mesure implique quant à elle une structure et une intégration éditoriale dédiées.",
         ],
       },
       {
-        heading: "2. Ce qui fait varier le devis d'un développeur web freelance",
+        heading: "2. Ce qui influence le tarif d'une création de site web au Maroc",
         paragraphs: [
-          "Au-delà du nombre de pages, plusieurs critères concrets expliquent l'écart entre une installation rapide et un site conçu pour durer :",
+          "Au-delà du nombre de pages, plusieurs éléments concrets expliquent les écarts entre un simple template et un site conçu pour durer :",
         ],
         bullets: [
-          "Architecture technique : développement sur mesure Next.js / React pour la performance ou CMS WordPress / WooCommerce pour l'autonomie éditoriale",
-          "Design UI et responsive : maquette pensée pour smartphone dès le départ plutôt qu'un thème générique non adapté",
-          "Rédaction et structuration : organisation claire des titres, preuves clients et appels à l'action",
-          "SEO technique de base : balises title/meta uniques, données structurées, sitemap.xml et optimisation des images",
+          "Architecture technique : développement sur mesure Next.js / React pour la vitesse et le SEO, ou CMS WordPress / WooCommerce pour l'autonomie éditoriale",
+          "Design UI et responsive : interface pensée pour mobile dès la conception plutôt qu'un thème standardisé peu lisible",
+          "Structuration des messages : hiérarchie claire des titres, preuves clients et appels à l'action",
+          "SEO technique de base : balises title et meta uniques, données structurées, sitemap.xml et optimisation des images",
         ],
       },
       {
-        heading: "3. Éviter les coûts cachés après la mise en ligne",
+        heading: "3. Pourquoi les solutions ultra-économiques coûtent souvent plus cher à terme",
         paragraphs: [
-          "Avant de valider un prestataire à El Jadida, Casablanca, Agadir ou ailleurs au Maroc, vérifiez toujours à qui appartient le nom de domaine et l'hébergement, si le code source ou l'accès administrateur vous est remis, et comment sont gérées les futures mises à jour.",
+          "Un site bâclé sur un modèle pré-construit ou surchargé d'extensions s'avère difficile à faire évoluer, peine à se charger sur 4G et oblige fréquemment à financer une refonte complète quelques mois plus tard. Mieux vaut partir d'un devis création site web Maroc clair, proportionné à vos objectifs réels.",
+          "Avant de valider un prestataire à El Jadida, Casablanca, Agadir ou ailleurs au Maroc, vérifiez toujours à qui appartient le nom de domaine et l'hébergement, si les accès complets vous sont remis et comment sont encadrées les évolutions futures.",
         ],
       },
     ],
     relatedServiceSlug: "business-website-development",
     relatedServiceLabel: "Découvrir l'offre Création de Site Internet",
-    relatedLandingHref: "/tarifs",
-    relatedLandingLabel: "Voir les formules & devis sur mesure",
+    relatedLandingHref: "/creation-site-web-maroc",
+    relatedLandingLabel: "Création site web Maroc",
+    secondaryLandingHref: "/tarifs",
+    secondaryLandingLabel: "Voir l'approche devis & tarifs",
   },
   {
     slug: "site-vitrine-ou-ecommerce-lequel-choisir",
     title: "Site vitrine ou site e-commerce : lequel choisir pour votre activité ?",
+    metaTitle: "Site Vitrine ou E-commerce | Yassine Benazzou",
     seoDescription:
-      "Guide pratique pour choisir entre un site vitrine et une boutique e-commerce au Maroc et en France selon votre cycle de vente et votre logistique.",
+      "Guide pratique pour choisir entre création site vitrine et création site e-commerce au Maroc ou en France selon votre cycle de vente et logistique.",
     category: "Stratégie Web · Maroc & France",
     publishedAt: "2026-11-22",
     updatedAt: "2026-11-22",
@@ -77,50 +85,53 @@ export const blogArticles: BlogArticle[] = [
       "Lancer une boutique en ligne complète quand vos clients ont d'abord besoin d'un devis alourdit inutilement le projet. Inversement, se limiter à un formulaire quand vos produits peuvent s'acheter directement freine vos ventes.",
     sections: [
       {
-        heading: "Quand privilégier un site vitrine orienté devis",
+        heading: "Quand privilégier la création d'un site vitrine",
         paragraphs: [
-          "Le site vitrine est le meilleur choix lorsque votre prestation dépend d'un besoin spécifique, d'un rendez-vous ou d'un accompagnement : santé, architecture d'intérieur, B2B, services automobiles ou tourisme sur mesure.",
+          "Le site vitrine reste le meilleur choix lorsque votre prestation dépend d'un besoin précis, d'un rendez-vous ou d'une étude sur mesure : santé, architecture d'intérieur, services B2B, préparation automobile ou tourisme.",
         ],
         bullets: [
-          "Objectif principal : qualifier les prospects et faciliter l'appel, l'email ou le message WhatsApp",
-          "Contenu clé : présentation claire des services, réalisations concrètes, FAQ et preuves de sérieux",
-          "Maintenance allégée sans gestion quotidienne de stocks ni retours colis",
+          "Objectif principal : qualifier les prospects et faciliter le contact par formulaire, appel ou WhatsApp",
+          "Contenu clé : présentation claire des services, réalisations vérifiables, FAQ et preuves concrètes",
+          "Maintenance allégée sans gestion quotidienne de stocks ni logistique colis",
         ],
       },
       {
-        heading: "Quand investir dans un vrai site e-commerce",
+        heading: "Quand investir dans un site e-commerce complet",
         paragraphs: [
-          "La boutique e-commerce devient pertinente dès que vous proposez des références standardisées avec prix fixes, variantes (taille, couleur, capacité) et expédition organisée.",
+          "La boutique e-commerce devient pertinente dès que vous proposez des références standardisées avec prix fixes, variantes (taille, couleur, capacité) et expédition structurée.",
         ],
         bullets: [
           "Catalogue filtrable et recherche rapide sur mobile",
           "Panier simple et tunnel de commande sans friction",
-          "Suivi des stocks et fiches produits structurées pour Google",
+          "Suivi des stocks et fiches produits structurées pour les moteurs de recherche",
         ],
       },
       {
-        heading: "L'approche hybride : commencer vitrine puis évoluer",
+        heading: "L'approche progressive : vitrine puis boutique",
         paragraphs: [
-          "Si vous lancez une nouvelle marque, il est souvent judicieux de démarrer avec une vitrine rapide présentant vos produits phares et un canal de commande directe, puis d'ajouter un catalogue e-commerce complet une fois la demande validée.",
+          "Pour une nouvelle marque au Maroc ou en France, démarrer avec une vitrine rapide présentant vos offres phares et un canal de commande directe permet de valider la demande avant d'ajouter un module e-commerce complet.",
         ],
       },
     ],
     relatedServiceSlug: "ecommerce",
     relatedServiceLabel: "Explorer le service Boutique E-commerce",
     relatedLandingHref: "/creation-site-web-maroc",
-    relatedLandingLabel: "Création de site web au Maroc",
+    relatedLandingLabel: "Création site web Maroc",
+    secondaryLandingHref: "/creation-site-web-france",
+    secondaryLandingLabel: "Développeur web freelance France",
   },
   {
     slug: "pourquoi-choisir-nextjs-pour-site-web",
     title: "Pourquoi choisir Next.js pour un site web d'entreprise rapide et SEO-friendly ?",
+    metaTitle: "Pourquoi Choisir Next.js SEO | Yassine Benazzou",
     seoDescription:
-      "Avantages concrets de Next.js face aux solutions classiques : temps de chargement mobile, Core Web Vitals, rendu serveur pour Google et flexibilité UI.",
+      "Avantages concrets d'un développeur Next.js freelance : temps de chargement mobile, Core Web Vitals, rendu serveur pour Google et comparaison WordPress.",
     category: "Architecture & Performance",
     publishedAt: "2026-11-22",
     updatedAt: "2026-11-22",
     readingTime: "3 min",
     intro:
-      "Le choix technique influence directement l'expérience mobile de vos visiteurs et la facilité avec laquelle Google explore vos pages. Voici pourquoi Next.js s'impose souvent pour les sites d'entreprise et vitrines exigeantes en France comme au Maroc.",
+      "Le choix technique influence directement l'expérience mobile de vos visiteurs et la facilité avec laquelle Google explore vos pages. Voici pourquoi Next.js s'impose souvent pour les sites professionnels en France comme au Maroc.",
     sections: [
       {
         heading: "1. Des pages servies en HTML prêt à l'indexation",
@@ -135,58 +146,64 @@ export const blogArticles: BlogArticle[] = [
         ],
       },
       {
-        heading: "3. Next.js ou WordPress : rester honnête sur le besoin",
+        heading: "3. Next.js ou WordPress : choisir selon le besoin réel",
         paragraphs: [
-          "WordPress garde tout son sens si une équipe marketing doit publier plusieurs articles par semaine en totale autonomie via un back-office familier. Next.js excelle lorsque la priorité va au design sur mesure, à la sécurité sans plugins lourds et à la vitesse d'exécution.",
+          "WordPress garde tout son sens si une équipe marketing doit publier plusieurs articles par semaine en totale autonomie via un back-office familier. Next.js excelle lorsque la priorité va au design sur mesure, à la sécurité sans empilement d'extensions et à la vitesse d'exécution.",
         ],
       },
     ],
     relatedServiceSlug: "maintenance-seo",
     relatedServiceLabel: "Voir le service Maintenance & SEO Technique",
     relatedLandingHref: "/creation-site-web-france",
-    relatedLandingLabel: "Accompagnement Développeur Freelance France",
+    relatedLandingLabel: "Développeur freelance France",
+    secondaryLandingHref: "/services",
+    secondaryLandingLabel: "Tous les services web",
   },
   {
     slug: "comment-choisir-developpeur-web-freelance",
-    title: "Comment choisir un développeur web freelance fiable pour votre projet ?",
+    title: "Comment choisir un développeur web freelance et combien coûte un site professionnel ?",
+    metaTitle: "Tarif & Développeur Freelance | Yassine Benazzou",
     seoDescription:
-      "Les critères concrets pour évaluer un développeur web indépendant en France ou au Maroc : réalisations en ligne, performance réelle, clarté du périmètre et propriété du site.",
-    category: "Conseils Clients · France & Maroc",
+      "Comment évaluer un développeur web freelance, comparer le taux horaire développeur web freelance au forfait et savoir combien coûte un site internet.",
+    category: "Conseils & Tarifs · France & Maroc",
     publishedAt: "2026-11-22",
     updatedAt: "2026-11-22",
     readingTime: "3 min",
     intro:
-      "Travailler directement avec un développeur freelance évite les intermédiaires d'agence et accélère les échanges. Encore faut-il vérifier les bons signaux avant de confier l'image de votre entreprise.",
+      "Travailler directement avec un développeur web freelance évite les intermédiaires et accélère chaque validation. Encore faut-il comprendre comment sont structurés les tarifs et quels points techniques vérifier avant de confier votre projet.",
     sections: [
       {
-        heading: "Vérifier des sites réellement en ligne, pas seulement des maquettes",
+        heading: "1. Taux horaire, TJM ou forfait : combien coûte un site internet professionnel ?",
         paragraphs: [
-          "Testez plusieurs projets livrés directement sur votre téléphone. Un vrai site en production révèle immédiatement si la mise en page reste propre, si les boutons fonctionnent et si la navigation charge sans lenteur.",
+          "En France comme à l'international, deux modes de facturation coexistent : le taux horaire (ou tarif journalier moyen) adapté aux missions évolutives ou au renfort technique React / Next.js, et le devis au forfait calé sur des livrables précis pour un site vitrine ou une refonte.",
+          "Combien coûte un site internet professionnel au final ? Le budget suit directement l'ampleur réelle du projet : architecture de l'information, niveau de design sur mesure, nombre de gabarits de pages, intégration bilingue et exigences de performance.",
         ],
       },
       {
-        heading: "Poser quatre questions techniques avant de démarrer",
+        heading: "2. Vérifier des sites réellement en ligne avant de décider",
         paragraphs: [
-          "Un développeur sérieux saura vous répondre simplement sans jargon inutile :",
+          "Testez plusieurs réalisations publiées directement sur votre smartphone. Un vrai site en production montre immédiatement si la mise en page reste lisible, si les formulaires répondent vite et si les images chargent proprement.",
+        ],
+      },
+      {
+        heading: "3. Quatre questions essentielles à poser avant le devis",
+        paragraphs: [
+          "Un développeur indépendant transparent répond clairement sans jargon inutile :",
         ],
         bullets: [
-          "Le nom de domaine et l'hébergement seront-ils enregistrés à votre nom ?",
-          "Le site inclut-il un sitemap, des balises meta uniques et un affichage responsive vérifié ?",
-          "Comment fonctionne la prise en charge des corrections et évolutions après le lancement ?",
-          "Quelles étapes et quels livrables jalonnent le projet entre le brief initial et la mise en ligne ?",
-        ],
-      },
-      {
-        heading: "Privilégier la transparence sur le périmètre et le suivi",
-        paragraphs: [
-          "Un devis clair précise exactement les pages incluses, le délai estimé, les responsabilités de chacun (textes, visuels, intégration) et le canal de suivi direct durant la réalisation.",
+          "Le nom de domaine et l'hébergement sont-ils enregistrés directement au nom de votre entreprise ?",
+          "Le périmètre inclut-il sitemap.xml, balises meta uniques et responsive vérifié mobile/desktop ?",
+          "Travaillez-vous au forfait par jalons validés ou au taux horaire développeur web freelance pour les évolutions ?",
+          "Comment s'organise la prise en charge technique et la maintenance après la mise en ligne ?",
         ],
       },
     ],
     relatedServiceSlug: "website-redesign",
     relatedServiceLabel: "Découvrir le service Refonte de Site Web",
-    relatedLandingHref: "/contact",
-    relatedLandingLabel: "Échanger directement sur votre projet",
+    relatedLandingHref: "/creation-site-web-france",
+    relatedLandingLabel: "Développeur web freelance France",
+    secondaryLandingHref: "/contact",
+    secondaryLandingLabel: "Demander un devis sur mesure",
   },
 ];
 

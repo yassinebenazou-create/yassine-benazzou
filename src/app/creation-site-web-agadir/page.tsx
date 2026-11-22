@@ -3,8 +3,9 @@ import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
   title: "Création site web Agadir",
+  absoluteTitle: "Création Site Web Agadir | Yassine Benazzou",
   description:
-    "Création de site web à Agadir pour tourisme, santé et services : sites bilingues FR/EN rapides sur mobile et optimisés pour les réservations.",
+    "Création site web Agadir pour tourisme, santé et services : sites bilingues FR/EN rapides sur mobile et structurés pour capter vos demandes.",
   path: "/creation-site-web-agadir",
   locale: "fr_MA",
   keywords: [

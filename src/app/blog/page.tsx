@@ -8,16 +8,17 @@ import { blogArticles } from "@/data/articles";
 import { breadcrumbJsonLd, createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
-  title: "Guides Création Site Web, Next.js & SEO (Maroc & France)",
+  title: "Guides Web, Prix & SEO Maroc / France",
+  absoluteTitle: "Guides Web, Prix & SEO Maroc / France | Yassine Benazzou",
   description:
-    "Guides pratiques sur la création de site internet au Maroc et en France : budget, choix entre site vitrine et e-commerce, Next.js vs WordPress et critères freelance.",
+    "Guides pratiques pour PME au Maroc et en France : prix création site web Maroc, taux horaire développeur freelance, Next.js vs WordPress et site vitrine.",
   path: "/blog",
   locale: "fr_FR",
   keywords: [
-    "Combien coûte la création d'un site web au Maroc",
-    "Site vitrine ou site e-commerce",
-    "Pourquoi choisir Next.js pour son site web",
-    "Comment choisir un développeur web freelance",
+    "prix création site web Maroc",
+    "tarif création site web Maroc",
+    "taux horaire développeur web freelance",
+    "combien coûte un site internet professionnel",
   ],
 });
 
