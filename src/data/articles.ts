@@ -29,7 +29,7 @@ export const blogArticles: BlogArticle[] = [
     category: "Budget & Cadrage · Maroc",
     publishedAt: "2026-11-22",
     updatedAt: "2026-11-22",
-    readingTime: "5 min",
+    readingTime: "3 min",
     intro:
       "Comparer deux devis de création de site internet au Maroc uniquement sur le prix final mène souvent à des surprises : template peu personnalisé, lenteur sur mobile ou absence de bases SEO. Le coût réel dépend surtout du périmètre fonctionnel et du niveau d'accompagnement.",
     sections: [
@@ -72,7 +72,7 @@ export const blogArticles: BlogArticle[] = [
     category: "Stratégie Web · Maroc & France",
     publishedAt: "2026-11-22",
     updatedAt: "2026-11-22",
-    readingTime: "4 min",
+    readingTime: "3 min",
     intro:
       "Lancer une boutique en ligne complète quand vos clients ont d'abord besoin d'un devis alourdit inutilement le projet. Inversement, se limiter à un formulaire quand vos produits peuvent s'acheter directement freine vos ventes.",
     sections: [
@@ -118,7 +118,7 @@ export const blogArticles: BlogArticle[] = [
     category: "Architecture & Performance",
     publishedAt: "2026-11-22",
     updatedAt: "2026-11-22",
-    readingTime: "5 min",
+    readingTime: "3 min",
     intro:
       "Le choix technique influence directement l'expérience mobile de vos visiteurs et la facilité avec laquelle Google explore vos pages. Voici pourquoi Next.js s'impose souvent pour les sites d'entreprise et vitrines exigeantes en France comme au Maroc.",
     sections: [
@@ -154,7 +154,7 @@ export const blogArticles: BlogArticle[] = [
     category: "Conseils Clients · France & Maroc",
     publishedAt: "2026-11-22",
     updatedAt: "2026-11-22",
-    readingTime: "4 min",
+    readingTime: "3 min",
     intro:
       "Travailler directement avec un développeur freelance évite les intermédiaires d'agence et accélère les échanges. Encore faut-il vérifier les bons signaux avant de confier l'image de votre entreprise.",
     sections: [

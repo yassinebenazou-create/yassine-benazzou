@@ -33,8 +33,8 @@ const breadcrumbs = [
 
 const francePillars = [
   {
-    title: "Collaboration fluide sur le fuseau horaire français",
-    text: "Basé à El Jadida au Maroc (même fuseau GMT+1 que Paris une grande partie de l'année), je travaille en direct avec vos équipes par visioconférence et lien de prévisualisation continu.",
+    title: "Collaboration fluide sur des horaires alignés",
+    text: "Basé à El Jadida au Maroc (0 à 1 heure d'écart avec la France selon la saison), je travaille en direct avec vos équipes par visioconférence et lien de prévisualisation continu.",
   },
   {
     title: "Exigence Core Web Vitals & SEO Google France",
@@ -108,10 +108,10 @@ export default function FranceLandingPage() {
       <PageHero
         eyebrow="France · Collaboration Remote Directe"
         title="Développeur Web Freelance Next.js pour Entreprises en France."
-        text="Création de site internet professionnel, refonte complète et développement sur mesure à distance depuis le Maroc (fuseau horaire aligné avec Paris), avec suivi transparent en euros."
+        text="Création de site internet professionnel, refonte complète et développement sur mesure à distance depuis El Jadida (Maroc), sur des créneaux horaires compatibles avec vos équipes."
       >
         <ButtonLink href="/contact">
-          Demander un devis en EUR
+          Demander un devis
         </ButtonLink>
         <ButtonLink href={whatsappUrl("Bonjour Yassine, je souhaite discuter d'un projet web pour la France.")} external variant="secondary">
           <MessageCircle className="h-4 w-4 text-emerald-400" />
@@ -137,8 +137,8 @@ export default function FranceLandingPage() {
                 </div>
                 <p className="mt-2 leading-relaxed text-slate-300">
                   Studio indépendant basé à {siteConfig.city}, {siteConfig.country}. Accompagnement
-                  100 % à distance des entreprises en France (Paris, Lyon, Bordeaux, Marseille,
-                  Nantes, Lille) sur horaires compatibles Europe de l&apos;Ouest.
+                  100 % à distance des entreprises partout en France sur horaires compatibles Europe
+                  de l&apos;Ouest, sans bureau physique en France.
                 </p>
               </div>
             </div>
