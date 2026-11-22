@@ -1,8 +1,10 @@
 import { CheckCircle2 } from "lucide-react";
+import { Breadcrumbs } from "@/components/breadcrumbs";
+import { JsonLd } from "@/components/json-ld";
 import { FinalCta } from "@/components/sections/home-sections";
 import { ButtonLink, Container, PageHero } from "@/components/ui";
 import { pricingPlans } from "@/data/pricing";
-import { createMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, createMetadata } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 
 export const metadata = createMetadata({
@@ -18,8 +20,14 @@ export const metadata = createMetadata({
 });
 
 export default function PricingPage() {
+  const breadcrumbs = [
+    { name: "Home", href: "/" },
+    { name: "Pricing", href: "/tarifs" },
+  ];
+
   return (
     <>
+      <JsonLd data={breadcrumbJsonLd(breadcrumbs)} />
       <PageHero
         eyebrow="Investment & Scope"
         title="Custom Quotes Matched to Your Scope"
@@ -30,8 +38,9 @@ export default function PricingPage() {
         </ButtonLink>
       </PageHero>
 
-      <section className="bg-[#0b0d12] py-24 sm:py-28">
+      <section className="bg-[#0b0d12] py-20 sm:py-24">
         <Container>
+          <Breadcrumbs items={breadcrumbs} />
           {/* Asymmetrical Bento Pricing Grid */}
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
             {pricingPlans.map((plan, index) => (

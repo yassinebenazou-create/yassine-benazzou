@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/json-ld";
 import { ServiceDetailView } from "@/components/sections/services-views";
 import { getAllServiceSlugs, getService } from "@/data/services";
-import { breadcrumbJsonLd, createMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, createMetadata, serviceJsonLd } from "@/lib/seo";
 
 type Params = Promise<{ slug: string }>;
 
@@ -42,6 +42,13 @@ export default async function ServicePage({ params }: { params: Params }) {
   return (
     <>
       <JsonLd data={breadcrumbJsonLd(breadcrumbs)} />
+      <JsonLd
+        data={serviceJsonLd({
+          name: service.title.en,
+          description: service.seoDescription.en,
+          path: `/services/${service.slug}`,
+        })}
+      />
       <ServiceDetailView service={service} />
     </>
   );

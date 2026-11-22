@@ -12,6 +12,7 @@ import { cn } from "@/lib/utils";
 
 const regionalLinks = [
   { label: "Maroc", href: "/creation-site-web-maroc" },
+  { label: "France", href: "/creation-site-web-france" },
   { label: "El Jadida", href: "/creation-site-web-el-jadida" },
   { label: "Casablanca", href: "/creation-site-web-casablanca" },
   { label: "Agadir", href: "/creation-site-web-agadir" },

@@ -10,6 +10,7 @@ import { services } from "@/data/services";
 
 const locations = [
   { label: "Morocco", href: "/creation-site-web-maroc" },
+  { label: "France", href: "/creation-site-web-france" },
   { label: "Casablanca", href: "/creation-site-web-casablanca" },
   { label: "Agadir", href: "/creation-site-web-agadir" },
   { label: "El Jadida", href: "/creation-site-web-el-jadida" },
@@ -64,13 +65,15 @@ export function Footer() {
                   <MessageCircle className="h-4 w-4 text-emerald-400" />
                   <span>WhatsApp</span>
                 </a>
-                <a
-                  href={`mailto:${siteConfig.email}`}
-                  className="inline-flex items-center gap-2 transition hover:text-white"
-                >
-                  <Mail className="h-4 w-4 text-emerald-400" />
-                  <span className="truncate">{siteConfig.email}</span>
-                </a>
+                {!siteConfig.isEmailPlaceholder ? (
+                  <a
+                    href={`mailto:${siteConfig.email}`}
+                    className="inline-flex items-center gap-2 transition hover:text-white"
+                  >
+                    <Mail className="h-4 w-4 text-emerald-400" />
+                    <span className="truncate">{siteConfig.email}</span>
+                  </a>
+                ) : null}
               </div>
             </div>
 
@@ -139,6 +142,11 @@ export function Footer() {
                   <li>
                     <Link href="/tarifs" className="text-slate-300 transition hover:text-emerald-400">
                       {language === "fr" ? "Tarifs & Devis" : "Pricing & Scope"}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/blog" className="text-slate-300 transition hover:text-emerald-400">
+                      {language === "fr" ? "Guides & Blog" : "Guides & Blog"}
                     </Link>
                   </li>
                   <li>

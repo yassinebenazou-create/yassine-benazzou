@@ -73,7 +73,11 @@ export function HeroVisual() {
             >
               <Image
                 src={activeProject.image}
-                alt={`${activeProject.name} — ${activeProject.industry[language]}`}
+                alt={
+                  language === "fr"
+                    ? `Aperçu du site web ${activeProject.name} (${activeProject.industry.fr})`
+                    : `Website preview for ${activeProject.name} (${activeProject.industry.en})`
+                }
                 fill
                 preload
                 sizes="(max-width: 1024px) 92vw, 44vw"
@@ -97,7 +101,11 @@ export function HeroVisual() {
             >
               <Image
                 src={activeProject.image}
-                alt={`${activeProject.name} — ${activeProject.industry[language]}`}
+                alt={
+                  language === "fr"
+                    ? `Aperçu du site web ${activeProject.name} (${activeProject.industry.fr})`
+                    : `Website preview for ${activeProject.name} (${activeProject.industry.en})`
+                }
                 fill
                 preload
                 sizes="(max-width: 1024px) 92vw, 44vw"

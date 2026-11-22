@@ -122,7 +122,6 @@ export const verifiedTechnologies = [
   "TypeScript",
   "JavaScript",
   "Tailwind CSS",
-  "Framer Motion",
   "WordPress",
   "WooCommerce",
   "Node.js",

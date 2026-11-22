@@ -192,13 +192,15 @@ export function ContactForm() {
             <MessageCircle className="h-4 w-4" />
             <span>{formCopy.sendViaWhatsapp}</span>
           </a>
-          <a
-            href={mailtoHref}
-            className="inline-flex min-h-12 flex-1 items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-5 text-sm font-semibold text-white transition hover:border-emerald-400/50 hover:bg-white/[0.08]"
-          >
-            <Mail className="h-4 w-4" />
-            <span>{formCopy.sendViaEmail}</span>
-          </a>
+          {!siteConfig.isEmailPlaceholder ? (
+            <a
+              href={mailtoHref}
+              className="inline-flex min-h-12 flex-1 items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-5 text-sm font-semibold text-white transition hover:border-emerald-400/50 hover:bg-white/[0.08]"
+            >
+              <Mail className="h-4 w-4" />
+              <span>{formCopy.sendViaEmail}</span>
+            </a>
+          ) : null}
         </div>
 
         <button

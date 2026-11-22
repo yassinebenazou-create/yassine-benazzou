@@ -416,7 +416,7 @@ function ContactSection() {
       isPlaceholder: false,
       external: true,
     },
-  ];
+  ].filter((item) => !item.isPlaceholder);
 
   return (
     <section

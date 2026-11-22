@@ -9,10 +9,10 @@ import { ProjectCard } from "@/components/project-card";
 import { Reveal } from "@/components/reveal";
 import { FinalCta } from "@/components/sections/home-sections";
 import { ButtonLink, Container, PageHero, SectionHeader } from "@/components/ui";
-import { featuredProjects, type Project } from "@/data/projects";
+import { additionalProjects, featuredProjects, type Project } from "@/data/projects";
 
 export function ProjectsArchiveView() {
-  const { content } = useLanguage();
+  const { language, content } = useLanguage();
   const p = content.projects;
 
   return (
@@ -36,6 +36,27 @@ export function ProjectsArchiveView() {
               </Reveal>
             ))}
           </div>
+
+          {additionalProjects.length > 0 ? (
+            <div className="mt-20 border-t border-white/10 pt-16">
+              <SectionHeader
+                eyebrow={language === "fr" ? "Archives Concepts Studio" : "Additional Studio Concepts"}
+                title={language === "fr" ? "Maquettes & Prototypes Sectoriels" : "Sector Concept Showcases"}
+                text={
+                  language === "fr"
+                    ? "Concepts architecturés en interne pour illustrer d'autres secteurs."
+                    : "Additional architectural concepts kept available for sector reference."
+                }
+              />
+              <div className="mt-10 grid gap-8 md:grid-cols-2">
+                {additionalProjects.map((project, index) => (
+                  <Reveal key={project.slug} delay={index * 0.06}>
+                    <ProjectCard project={project} headingLevel="h3" />
+                  </Reveal>
+                ))}
+              </div>
+            </div>
+          ) : null}
         </Container>
       </section>
 

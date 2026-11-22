@@ -5,6 +5,7 @@ import { createMetadata, faqJsonLd } from "@/lib/seo";
 
 export const metadata = createMetadata({
   title: "Freelance Web Developer Morocco",
+  absoluteTitle: "Freelance Web Developer Morocco | Yassine Benazzou",
   description:
     "Freelance web developer and web designer in Morocco building Next.js websites, business sites, and e-commerce platforms for local and global clients.",
   path: "/",

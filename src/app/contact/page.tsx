@@ -47,7 +47,7 @@ export default function ContactPage() {
       external: true,
       placeholder: false,
     },
-  ];
+  ].filter((item) => !item.placeholder);
 
   return (
     <>
@@ -66,10 +66,12 @@ export default function ContactPage() {
           <MessageCircle className="h-4 w-4" />
           <span>WhatsApp</span>
         </ButtonLink>
-        <ButtonLink href={`mailto:${siteConfig.email}`} variant="secondary" external className="w-full sm:w-auto">
-          <Mail className="h-4 w-4" />
-          <span>Email</span>
-        </ButtonLink>
+        {!siteConfig.isEmailPlaceholder ? (
+          <ButtonLink href={`mailto:${siteConfig.email}`} variant="secondary" external className="w-full sm:w-auto">
+            <Mail className="h-4 w-4" />
+            <span>Email</span>
+          </ButtonLink>
+        ) : null}
       </PageHero>
 
       <section className="bg-[#0b0d12] py-24 sm:py-28">

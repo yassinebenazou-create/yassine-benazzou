@@ -26,7 +26,11 @@ function ProjectCardBase({
     <>
       <Image
         src={project.image}
-        alt={`${project.name} — ${project.industry[language]}`}
+        alt={
+          language === "fr"
+            ? `Aperçu du site web ${project.name} (${project.industry.fr})`
+            : `Website preview for ${project.name} (${project.industry.en})`
+        }
         fill
         loading="lazy"
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 45vw"

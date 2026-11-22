@@ -32,7 +32,7 @@ export const pricingPlans: PricingPlan[] = [
       "Bilingual EN / FR structure",
       "Clear conversion copy & user flow",
       "Speed & image optimization",
-      "Accessible Framer Motion transitions",
+      "Smooth accessible CSS & UI transitions",
       "Sitemap, Open Graph & search readiness",
     ],
   },
