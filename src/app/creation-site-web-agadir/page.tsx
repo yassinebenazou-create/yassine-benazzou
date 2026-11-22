@@ -52,6 +52,10 @@ export default function Page() {
         slug: "nutritionniste-agadir",
         note: "Projet réel réalisé à Agadir : structuration d'un site santé sobre et mobile-first pour simplifier les prises de contact patients.",
       }}
+      relatedGuide={{
+        title: "Guide : Création site web hôtel & riad",
+        href: "/blog/creation-site-web-hotel",
+      }}
       faqs={[
         {
           question: "Comment gérez-vous un projet à Agadir depuis El Jadida ?",

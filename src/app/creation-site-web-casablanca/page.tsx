@@ -52,6 +52,10 @@ export default function Page() {
         slug: "customcar",
         note: "Exemple de vitrine contrastée développée avec Next.js et Tailwind CSS pour valoriser des prestations spécialisées et capter des devis.",
       }}
+      relatedGuide={{
+        title: "Guide : Création site web expert comptable",
+        href: "/blog/creation-site-web-expert-comptable",
+      }}
       faqs={[
         {
           question: "Comment travaillez-vous avec des clients basés à Casablanca ?",

@@ -41,6 +41,7 @@ export function LocalSeoPage({
   serviceSlugs,
   localUseCases,
   relatedProject,
+  relatedGuide,
   faqs,
 }: {
   location: string;
@@ -58,6 +59,10 @@ export function LocalSeoPage({
     name: string;
     slug: string;
     note: string;
+  };
+  relatedGuide?: {
+    title: string;
+    href: string;
   };
   faqs: LocalFaqItem[];
 }) {
@@ -264,6 +269,14 @@ export function LocalSeoPage({
                       Création site web {item.label}
                     </Link>
                   ))}
+                {relatedGuide ? (
+                  <Link
+                    href={relatedGuide.href}
+                    className="rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3.5 py-1.5 text-xs font-medium text-emerald-300 transition hover:border-emerald-400/50 hover:text-emerald-200"
+                  >
+                    {relatedGuide.title}
+                  </Link>
+                ) : null}
               </div>
             </div>
 

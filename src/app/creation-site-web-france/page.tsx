@@ -194,12 +194,18 @@ export default function FranceLandingPage() {
               title="Services Adaptés aux Entreprises en France"
               text="Chaque projet inclut un code TypeScript propre, l'optimisation Core Web Vitals et la préparation SEO."
             />
-            <div className="flex flex-wrap gap-3">
+            <div className="mt-7 flex flex-wrap gap-3">
               <ButtonLink href="/devis" variant="primary" className="w-full shrink-0 sm:w-fit">
                 Estimer votre budget (EUR)
               </ButtonLink>
               <ButtonLink href="/realisations" variant="secondary" className="w-full shrink-0 sm:w-fit">
                 Voir les réalisations clients
+              </ButtonLink>
+              <ButtonLink href="/blog/creation-site-web-expert-comptable" variant="secondary" className="w-full shrink-0 sm:w-fit">
+                Guide cabinets comptables
+              </ButtonLink>
+              <ButtonLink href="/blog/creation-site-web-hotel" variant="secondary" className="w-full shrink-0 sm:w-fit">
+                Guide sites hôteliers
               </ButtonLink>
             </div>
           </div>

@@ -17,8 +17,10 @@ export const metadata = createMetadata({
   keywords: [
     "prix création site web Maroc",
     "tarif création site web Maroc",
+    "création site web hôtel",
+    "création site web expert comptable",
+    "freelance ou agence web Maroc",
     "taux horaire développeur web freelance",
-    "combien coûte un site internet professionnel",
   ],
 });
 
