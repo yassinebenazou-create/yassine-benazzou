@@ -36,6 +36,9 @@ export default function PricingPage() {
         <ButtonLink href="/contact">
           Request Your Project Quote
         </ButtonLink>
+        <ButtonLink href="/devis" variant="secondary">
+          Open Interactive Quote Estimator
+        </ButtonLink>
       </PageHero>
 
       <section className="bg-[#0b0d12] py-20 sm:py-24">

@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/a-propos",
     "/contact",
     "/tarifs",
+    "/devis",
     "/blog",
     "/creation-site-web-maroc",
     "/creation-site-web-france",

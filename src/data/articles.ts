@@ -68,8 +68,8 @@ export const blogArticles: BlogArticle[] = [
     relatedServiceLabel: "Découvrir l'offre Création de Site Internet",
     relatedLandingHref: "/creation-site-web-maroc",
     relatedLandingLabel: "Création site web Maroc",
-    secondaryLandingHref: "/tarifs",
-    secondaryLandingLabel: "Voir l'approche devis & tarifs",
+    secondaryLandingHref: "/devis",
+    secondaryLandingLabel: "Estimer votre budget (/devis)",
   },
   {
     slug: "site-vitrine-ou-ecommerce-lequel-choisir",
@@ -202,8 +202,8 @@ export const blogArticles: BlogArticle[] = [
     relatedServiceLabel: "Découvrir le service Refonte de Site Web",
     relatedLandingHref: "/creation-site-web-france",
     relatedLandingLabel: "Développeur web freelance France",
-    secondaryLandingHref: "/contact",
-    secondaryLandingLabel: "Demander un devis sur mesure",
+    secondaryLandingHref: "/devis",
+    secondaryLandingLabel: "Simulateur de devis (MAD / EUR)",
   },
 ];
 

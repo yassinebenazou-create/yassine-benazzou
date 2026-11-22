@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   AlertCircle,
   CheckCircle2,
@@ -62,6 +62,41 @@ export function ContactForm() {
   const [submittedBrief, setSubmittedBrief] = useState<SubmittedSummary | null>(
     null,
   );
+
+  // Apply pre-filled brief passed from /devis estimator without opting out of static prerendering
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const typeParam = Number(params.get("type"));
+    const budgetParam = Number(params.get("budget"));
+    const briefParam = params.get("brief")?.trim();
+
+    if (
+      !Number.isNaN(typeParam) ||
+      !Number.isNaN(budgetParam) ||
+      Boolean(briefParam)
+    ) {
+      const timeout = window.setTimeout(() => {
+        setValues((prev) => ({
+          ...prev,
+          projectTypeIndex:
+            Number.isInteger(typeParam) &&
+            typeParam >= 0 &&
+            typeParam < formCopy.projectTypes.length
+              ? typeParam
+              : prev.projectTypeIndex,
+          budgetIndex:
+            Number.isInteger(budgetParam) &&
+            budgetParam >= 0 &&
+            budgetParam < formCopy.budgetOptions.length
+              ? budgetParam
+              : prev.budgetIndex,
+          description: briefParam ? briefParam : prev.description,
+        }));
+      }, 0);
+      return () => window.clearTimeout(timeout);
+    }
+    return undefined;
+  }, [formCopy.budgetOptions.length, formCopy.projectTypes.length]);
 
   const selectedProjectType =
     formCopy.projectTypes[values.projectTypeIndex] ?? formCopy.projectTypes[0];

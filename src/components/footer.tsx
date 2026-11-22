@@ -145,6 +145,11 @@ export function Footer() {
                     </Link>
                   </li>
                   <li>
+                    <Link href="/devis" className="text-slate-300 transition hover:text-emerald-400">
+                      {language === "fr" ? "Simulateur de Devis" : "Quote Estimator"}
+                    </Link>
+                  </li>
+                  <li>
                     <Link href="/blog" className="text-slate-300 transition hover:text-emerald-400">
                       {language === "fr" ? "Guides & Blog" : "Guides & Blog"}
                     </Link>

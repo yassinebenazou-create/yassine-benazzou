@@ -203,9 +203,14 @@ export function LocalSeoPage({
               title={`Services recommandés pour ${location}`}
               text="Chaque projet est développé avec un code propre, une structure SEO claire et une compatibilité mobile soignée."
             />
-            <ButtonLink href="/tarifs" variant="secondary" className="w-full shrink-0 sm:w-fit">
-              Voir les formules & devis
-            </ButtonLink>
+            <div className="flex flex-wrap gap-3">
+              <ButtonLink href="/devis" variant="primary" className="w-full shrink-0 sm:w-fit">
+                Estimer mon budget (/devis)
+              </ButtonLink>
+              <ButtonLink href="/tarifs" variant="secondary" className="w-full shrink-0 sm:w-fit">
+                Voir les formules & devis
+              </ButtonLink>
+            </div>
           </div>
 
           <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-12">

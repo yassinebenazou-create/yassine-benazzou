@@ -58,14 +58,14 @@ export function ServicesArchiveView() {
                   : "Explore dedicated pages tailored for businesses in Morocco and remote B2B teams in France."}
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
+                <ButtonLink href="/devis" variant="primary">
+                  {language === "fr" ? "Simulateur de devis" : "Quote Estimator"}
+                </ButtonLink>
                 <ButtonLink href="/creation-site-web-maroc" variant="secondary">
                   {language === "fr" ? "Création site web Maroc" : "Morocco Web Services"}
                 </ButtonLink>
                 <ButtonLink href="/creation-site-web-france" variant="secondary">
                   {language === "fr" ? "Développeur freelance France" : "France Remote Services"}
-                </ButtonLink>
-                <ButtonLink href="/contact" variant="primary">
-                  {language === "fr" ? "Demander un devis" : "Request a Quote"}
                 </ButtonLink>
               </div>
             </div>
