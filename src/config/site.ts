@@ -1,12 +1,10 @@
-// CONFIGURATION PLACEHOLDERS:
-// Set NEXT_PUBLIC_CONTACT_EMAIL in your environment (.env.local / Vercel) or replace
-// DEFAULT_EMAIL_PLACEHOLDER below before going live. Phone & WhatsApp default to Yassine's
-// number and can also be overridden via NEXT_PUBLIC_CONTACT_PHONE / NEXT_PUBLIC_WHATSAPP_NUMBER.
-const DEFAULT_EMAIL_PLACEHOLDER = "contact@example.com";
+// Set NEXT_PUBLIC_CONTACT_EMAIL / NEXT_PUBLIC_CONTACT_PHONE / NEXT_PUBLIC_WHATSAPP_NUMBER
+// in your environment (.env.local / Vercel) to override Yassine's default contact details.
+const DEFAULT_EMAIL = "yassinebenazou@gmail.com";
 const DEFAULT_PHONE = "+212 7 02 73 62 93";
 const DEFAULT_WHATSAPP = "+212702736293";
 
-const email = process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || DEFAULT_EMAIL_PLACEHOLDER;
+const email = process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || DEFAULT_EMAIL;
 const phone = process.env.NEXT_PUBLIC_CONTACT_PHONE?.trim() || DEFAULT_PHONE;
 const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.trim() || DEFAULT_WHATSAPP;
 
@@ -27,7 +25,7 @@ export const siteConfig = {
   email,
   phone,
   whatsapp,
-  isEmailPlaceholder: email === DEFAULT_EMAIL_PLACEHOLDER,
+  isEmailPlaceholder: false,
   isPhonePlaceholder: false,
   isWhatsappPlaceholder: false,
   city: "El Jadida",
