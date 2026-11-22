@@ -11,6 +11,33 @@ type ContactPayload = {
 };
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const RATE_WINDOW_MS = 10 * 60 * 1000;
+const MAX_SUBMISSIONS_PER_WINDOW = 6;
+const ipHits = new Map<string, number[]>();
+
+function cleanHeaderLine(value: string, maxLen: number) {
+  return value.replace(/[\r\n]+/g, " ").trim().slice(0, maxLen);
+}
+
+function isRateLimited(request: Request): boolean {
+  const rawIp =
+    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+    request.headers.get("x-real-ip")?.trim() ||
+    "unknown";
+
+  if (rawIp === "unknown") return false;
+
+  const now = Date.now();
+  const recent = (ipHits.get(rawIp) ?? []).filter((ts) => now - ts < RATE_WINDOW_MS);
+  if (recent.length >= MAX_SUBMISSIONS_PER_WINDOW) {
+    ipHits.set(rawIp, recent);
+    return true;
+  }
+
+  recent.push(now);
+  ipHits.set(rawIp, recent);
+  return false;
+}
 
 export async function POST(request: Request) {
   let body: ContactPayload;
@@ -24,21 +51,28 @@ export async function POST(request: Request) {
     );
   }
 
-  // Silently accept bot honeypot submissions without dispatching
-  if (body.website && body.website.trim().length > 0) {
+  // Silently accept bot honeypot submissions without dispatching external notifications
+  if (typeof body.website === "string" && body.website.trim().length > 0) {
     return NextResponse.json({ ok: true, deliveredVia: "prepared" });
   }
 
-  const fullName = body.fullName?.trim() ?? "";
-  const email = body.email?.trim() ?? "";
-  const company = body.company?.trim() ?? "";
-  const projectType = body.projectType?.trim() ?? "Website Project";
-  const budget = body.budget?.trim() ?? "";
-  const description = body.description?.trim() ?? "";
-
-  if (!fullName || fullName.length < 2) {
+  if (isRateLimited(request)) {
     return NextResponse.json(
-      { ok: false, error: "Please enter your full name." },
+      { ok: false, error: "Too many requests. Please wait a few minutes or message on WhatsApp." },
+      { status: 429 },
+    );
+  }
+
+  const fullName = cleanHeaderLine(String(body.fullName ?? ""), 120);
+  const email = cleanHeaderLine(String(body.email ?? ""), 160);
+  const company = cleanHeaderLine(String(body.company ?? ""), 120);
+  const projectType = cleanHeaderLine(String(body.projectType ?? "Website Project"), 120) || "Website Project";
+  const budget = cleanHeaderLine(String(body.budget ?? ""), 120);
+  const description = String(body.description ?? "").trim().slice(0, 4000);
+
+  if (fullName.length < 2) {
+    return NextResponse.json(
+      { ok: false, error: "Please enter your full name (at least 2 characters)." },
       { status: 400 },
     );
   }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   AlertCircle,
   CheckCircle2,
@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { useLanguage } from "@/components/language-provider";
 import { siteConfig, whatsappUrl } from "@/config/site";
+import { trackConversionEvent } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 
 type FormState = {
@@ -62,6 +63,7 @@ export function ContactForm() {
   const [submittedBrief, setSubmittedBrief] = useState<SubmittedSummary | null>(
     null,
   );
+  const submittingRef = useRef(false);
 
   // Apply pre-filled brief passed from /devis estimator without opting out of static prerendering
   useEffect(() => {
@@ -107,7 +109,7 @@ export function ContactForm() {
 
   const validate = (): FieldErrors => {
     const next: FieldErrors = {};
-    if (!values.fullName.trim()) {
+    if (values.fullName.trim().length < 2) {
       next.fullName = formCopy.validation.nameRequired;
     }
     if (!EMAIL_PATTERN.test(values.email.trim())) {
@@ -121,12 +123,15 @@ export function ContactForm() {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (submittingRef.current) return;
+
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       return;
     }
 
+    submittingRef.current = true;
     setErrors({});
     setStatus("submitting");
 
@@ -161,12 +166,19 @@ export function ContactForm() {
         return;
       }
 
+      const mode = data.deliveredVia ?? "prepared";
       setSubmittedBrief(payload);
-      setDeliveredVia(data.deliveredVia ?? "prepared");
+      setDeliveredVia(mode);
       setStatus("success");
+      trackConversionEvent("contact_form_submitted", {
+        projectType: payload.projectType,
+        deliveredVia: mode,
+      });
     } catch {
       setErrors({ form: formCopy.validation.genericError });
       setStatus("error");
+    } finally {
+      submittingRef.current = false;
     }
   };
 
@@ -298,6 +310,7 @@ export function ContactForm() {
             name="fullName"
             type="text"
             required
+            maxLength={120}
             autoComplete="name"
             placeholder={formCopy.fullNamePlaceholder}
             value={values.fullName}
@@ -453,6 +466,7 @@ export function ContactForm() {
             name="description"
             rows={4}
             required
+            maxLength={4000}
             placeholder={formCopy.descriptionPlaceholder}
             value={values.description}
             onChange={(e) => {

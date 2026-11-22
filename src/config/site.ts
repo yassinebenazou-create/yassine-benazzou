@@ -1,10 +1,9 @@
-// Set NEXT_PUBLIC_CONTACT_EMAIL / NEXT_PUBLIC_CONTACT_PHONE / NEXT_PUBLIC_WHATSAPP_NUMBER
-// in your environment (.env.local / Vercel) to override Yassine's default contact details.
-const DEFAULT_EMAIL = "yassinebenazou@gmail.com";
+// Set NEXT_PUBLIC_CONTACT_EMAIL in Vercel / .env.local to display direct email links & JSON-LD email.
+// Phone & WhatsApp default to Yassine's Morocco number and can be overridden via environment variables.
 const DEFAULT_PHONE = "+212 7 02 73 62 93";
 const DEFAULT_WHATSAPP = "+212702736293";
 
-const email = process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || DEFAULT_EMAIL;
+const email = process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || "";
 const phone = process.env.NEXT_PUBLIC_CONTACT_PHONE?.trim() || DEFAULT_PHONE;
 const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.trim() || DEFAULT_WHATSAPP;
 
@@ -25,7 +24,7 @@ export const siteConfig = {
   email,
   phone,
   whatsapp,
-  isEmailPlaceholder: false,
+  isEmailPlaceholder: !email,
   isPhonePlaceholder: false,
   isWhatsappPlaceholder: false,
   city: "El Jadida",

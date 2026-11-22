@@ -17,6 +17,7 @@ import {
   scopeConfigs,
   timelineConfigs,
 } from "@/data/devis";
+import { trackConversionEvent } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 
 const uiCopy = {
@@ -84,10 +85,46 @@ export function DevisEstimator() {
   const [options, setOptions] = useState<EstimatorOptionKey[]>(["seoPerf"]);
   const [timeline, setTimeline] = useState<EstimatorTimeline>("standard");
 
+  const handleMarketChange = (nextMarket: EstimatorMarket) => {
+    setMarket(nextMarket);
+    trackConversionEvent("devis_estimate_generated", {
+      market: nextMarket.toUpperCase(),
+      projectType,
+    });
+  };
+
+  const handleProjectTypeChange = (nextType: EstimatorProjectType) => {
+    setProjectType(nextType);
+    trackConversionEvent("devis_estimate_generated", {
+      market: market.toUpperCase(),
+      projectType: nextType,
+    });
+  };
+
+  const handleScopeChange = (nextScope: EstimatorScope) => {
+    setScope(nextScope);
+    trackConversionEvent("devis_estimate_generated", {
+      market: market.toUpperCase(),
+      projectType,
+    });
+  };
+
+  const handleTimelineChange = (nextTimeline: EstimatorTimeline) => {
+    setTimeline(nextTimeline);
+    trackConversionEvent("devis_estimate_generated", {
+      market: market.toUpperCase(),
+      projectType,
+    });
+  };
+
   const toggleOption = (key: EstimatorOptionKey) => {
     setOptions((prev) =>
       prev.includes(key) ? prev.filter((item) => item !== key) : [...prev, key],
     );
+    trackConversionEvent("devis_estimate_generated", {
+      market: market.toUpperCase(),
+      projectType,
+    });
   };
 
   const result = useMemo(
@@ -158,7 +195,7 @@ export function DevisEstimator() {
                   type="button"
                   role="radio"
                   aria-checked={active}
-                  onClick={() => setMarket(item.id)}
+                  onClick={() => handleMarketChange(item.id)}
                   className={cn(
                     "flex flex-col items-start rounded-2xl border p-4 text-left transition focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400",
                     active
@@ -191,7 +228,7 @@ export function DevisEstimator() {
                   type="button"
                   role="radio"
                   aria-checked={active}
-                  onClick={() => setProjectType(item.id)}
+                  onClick={() => handleProjectTypeChange(item.id)}
                   className={cn(
                     "flex flex-col items-start rounded-2xl border p-4 text-left transition focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400",
                     active
@@ -226,7 +263,7 @@ export function DevisEstimator() {
                   type="button"
                   role="radio"
                   aria-checked={active}
-                  onClick={() => setScope(item.id)}
+                  onClick={() => handleScopeChange(item.id)}
                   className={cn(
                     "flex items-start justify-between gap-4 rounded-2xl border p-4 text-left transition focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400",
                     active
@@ -304,7 +341,7 @@ export function DevisEstimator() {
                   type="button"
                   role="radio"
                   aria-checked={active}
-                  onClick={() => setTimeline(item.id)}
+                  onClick={() => handleTimelineChange(item.id)}
                   className={cn(
                     "flex flex-col items-start rounded-2xl border p-4 text-left transition focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400",
                     active
@@ -395,6 +432,12 @@ export function DevisEstimator() {
 
           <Link
             href={contactHref}
+            onClick={() =>
+              trackConversionEvent("devis_brief_sent_to_contact", {
+                market: market.toUpperCase(),
+                projectType,
+              })
+            }
             className="mt-7 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-emerald-400 px-6 text-center text-sm font-semibold text-slate-950 shadow-[0_12px_30px_-10px_rgba(52,211,153,0.55)] transition hover:-translate-y-0.5 hover:bg-emerald-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
           >
             <span>{t.cta}</span>
