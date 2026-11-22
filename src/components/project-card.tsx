@@ -31,12 +31,12 @@ function ProjectCardBase({
         loading="lazy"
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 45vw"
         unoptimized={project.image.endsWith(".svg")}
-        className="object-cover object-top grayscale-[25%] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06] group-hover:grayscale-0"
+        className="object-cover object-top transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] md:grayscale-[25%] md:transition-all group-hover:scale-[1.06] md:group-hover:grayscale-0"
       />
 
       {/* Category Pill */}
       <div className="absolute left-4 top-4 z-10">
-        <span className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-[#07080b]/85 px-3 py-1 text-xs font-medium text-slate-200 backdrop-blur-md">
+        <span className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-[#07080b]/92 px-3 py-1 text-xs font-medium text-slate-200 md:bg-[#07080b]/85 md:backdrop-blur-md">
           <span
             className={
               project.url
@@ -51,12 +51,15 @@ function ProjectCardBase({
 
       {/* Hover Dark Overlay + Animated Eye Icon & "View Live Website" */}
       <div
-        className="absolute inset-0 z-10 flex items-center justify-center bg-[#07080b]/70 opacity-0 backdrop-blur-[2px] transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100"
+        className="absolute inset-0 z-10 flex items-center justify-center bg-[#07080b]/75 opacity-0 md:bg-[#07080b]/70 md:backdrop-blur-[2px] transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100"
         aria-hidden={!project.url}
       >
         <span className="inline-flex translate-y-2 items-center gap-2.5 rounded-full border border-emerald-400/50 bg-[#0d121a]/95 px-5 py-2.5 text-sm font-semibold text-white shadow-[0_12px_32px_-8px_rgba(0,0,0,0.85)] transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-y-0 group-focus-visible:translate-y-0">
           <Eye className="h-4 w-4 text-emerald-400 transition-transform duration-300 group-hover:scale-110" />
-          <span>{project.url ? labels.viewLive : labels.caseDetails}</span>
+          <span>
+            {project.url ? labels.viewLive : labels.caseDetails}
+            <span className="sr-only"> — {project.name}</span>
+          </span>
         </span>
       </div>
     </>
@@ -69,7 +72,6 @@ function ProjectCardBase({
           href={project.url}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label={`${labels.viewLive}: ${project.name}`}
           className="relative block aspect-[16/10] overflow-hidden border-b border-white/10 bg-[#07080b] focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-emerald-400"
         >
           {coverContent}
@@ -77,7 +79,6 @@ function ProjectCardBase({
       ) : (
         <Link
           href={`/realisations/${project.slug}`}
-          aria-label={`${labels.caseDetails}: ${project.name}`}
           className="relative block aspect-[16/10] overflow-hidden border-b border-white/10 bg-[#07080b] focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-emerald-400"
         >
           {coverContent}

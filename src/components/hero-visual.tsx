@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { motion, useReducedMotion } from "framer-motion";
 import { ArrowUpRight, Check, ExternalLink, Eye } from "lucide-react";
 import { useLanguage } from "@/components/language-provider";
 import { featuredProjects } from "@/data/projects";
@@ -11,17 +10,12 @@ import { cn } from "@/lib/utils";
 
 export function HeroVisual() {
   const { language, content } = useLanguage();
-  const reduceMotion = useReducedMotion();
   const [activeIndex, setActiveIndex] = useState(0);
   const visual = content.hero.visual;
   const activeProject = featuredProjects[activeIndex] ?? featuredProjects[0];
 
   return (
-    <motion.div
-      initial={false}
-      animate={reduceMotion ? undefined : { y: 0 }}
-      className="relative mx-auto w-full max-w-xl lg:max-w-none"
-    >
+    <div className="relative mx-auto w-full max-w-xl lg:max-w-none">
       <div className="overflow-hidden rounded-[26px] border border-white/12 bg-[#0e1118] shadow-[0_28px_75px_-30px_rgba(0,0,0,0.95)]">
         {/* Top Window Chrome */}
         <div className="flex items-center justify-between border-b border-white/10 px-5 py-3.5">
@@ -53,6 +47,7 @@ export function HeroVisual() {
                 type="button"
                 role="tab"
                 aria-selected={active}
+                aria-controls="hero-preview-panel"
                 onClick={() => setActiveIndex(idx)}
                 className={cn(
                   "shrink-0 rounded-full px-3 py-1.5 text-xs font-medium transition focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400",
@@ -68,28 +63,30 @@ export function HeroVisual() {
         </div>
 
         {/* Live Project Preview Screen */}
-        <div className="p-4 sm:p-5">
+        <div id="hero-preview-panel" role="tabpanel" className="p-4 sm:p-5">
           {activeProject.url ? (
             <a
               href={activeProject.url}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`${content.projects.viewLive}: ${activeProject.name}`}
               className="group relative block aspect-[16/10] overflow-hidden rounded-2xl border border-white/10 bg-[#07080b] focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
             >
               <Image
                 src={activeProject.image}
                 alt={`${activeProject.name} — ${activeProject.industry[language]}`}
                 fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 44vw"
+                preload
+                sizes="(max-width: 1024px) 92vw, 44vw"
                 unoptimized={activeProject.image.endsWith(".svg")}
                 className="object-cover object-top transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.05]"
               />
-              <div className="absolute inset-0 flex items-center justify-center bg-[#07080b]/70 opacity-0 backdrop-blur-[2px] transition-opacity duration-300 group-hover:opacity-100">
+              <div className="absolute inset-0 flex items-center justify-center bg-[#07080b]/75 opacity-0 md:bg-[#07080b]/70 md:backdrop-blur-[2px] transition-opacity duration-300 group-hover:opacity-100">
                 <span className="inline-flex translate-y-2 items-center gap-2 rounded-full border border-emerald-400/50 bg-[#0d121a]/95 px-4 py-2 text-xs font-semibold text-white transition-all duration-300 group-hover:translate-y-0">
                   <Eye className="h-4 w-4 text-emerald-400" />
-                  <span>{content.projects.viewLive}</span>
+                  <span>
+                    {content.projects.viewLive}
+                    <span className="sr-only"> — {activeProject.name}</span>
+                  </span>
                 </span>
               </div>
             </a>
@@ -102,23 +99,23 @@ export function HeroVisual() {
                 src={activeProject.image}
                 alt={`${activeProject.name} — ${activeProject.industry[language]}`}
                 fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 44vw"
+                preload
+                sizes="(max-width: 1024px) 92vw, 44vw"
                 unoptimized={activeProject.image.endsWith(".svg")}
                 className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.05]"
               />
             </Link>
           )}
 
-            <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
-              <div>
-                <p className="text-xs font-medium text-emerald-300">
-                  {activeProject.industry[language]}
-                </p>
-                <p className="mt-0.5 font-display text-lg font-bold tracking-tight text-white">
-                  {activeProject.name}
-                </p>
-              </div>
+          <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <p className="text-xs font-medium text-emerald-300">
+                {activeProject.industry[language]}
+              </p>
+              <p className="mt-0.5 font-display text-lg font-bold tracking-tight text-white">
+                {activeProject.name}
+              </p>
+            </div>
 
             <div className="flex items-center gap-2">
               {activeProject.url ? (
@@ -128,7 +125,10 @@ export function HeroVisual() {
                   rel="noopener noreferrer"
                   className="inline-flex min-h-10 items-center gap-1.5 rounded-full border border-emerald-400/35 bg-emerald-400/10 px-3.5 text-xs font-semibold text-emerald-300 transition hover:bg-emerald-400 hover:text-slate-950"
                 >
-                  <span>{content.projects.viewLive}</span>
+                  <span>
+                    {content.projects.viewLive}
+                    <span className="sr-only"> — {activeProject.name}</span>
+                  </span>
                   <ExternalLink className="h-3.5 w-3.5" />
                 </a>
               ) : (
@@ -156,6 +156,6 @@ export function HeroVisual() {
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }

@@ -11,7 +11,7 @@ export function LanguageSwitcher({ compact = false }: { compact?: boolean }) {
       role="group"
       aria-label={content.nav.languageAria}
       className={cn(
-        "inline-flex items-center rounded-full border border-white/12 bg-white/[0.04] p-1 backdrop-blur",
+        "inline-flex items-center rounded-full border border-white/12 bg-[#0e1117]/95 p-1 md:bg-white/[0.04] md:backdrop-blur",
         compact && "w-full justify-between",
       )}
     >

@@ -73,6 +73,12 @@ h3,
     0 0 0 1px rgba(52, 211, 153, 0.12);
 }
 
+/* Defer layout and paint for off-screen sections while keeping full DOM & SEO availability */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 760px;
+}
+
 /* Custom subtle scrollbars */
 ::-webkit-scrollbar {
   width: 10px;

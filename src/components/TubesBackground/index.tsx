@@ -42,12 +42,6 @@ function TubesCanvasLayer({
     const canvas = canvasRef.current;
     if (!canvas) return undefined;
 
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reducedMotion) {
-      onFallback();
-      return undefined;
-    }
-
     let cancelled = false;
 
     async function mountTubes() {
@@ -125,10 +119,39 @@ export function TubesBackground({
   enableClickToRandomize = true,
 }: TubesBackgroundProps) {
   const [paletteIndex, setPaletteIndex] = useState(0);
+  const [shouldLoadWebGl, setShouldLoadWebGl] = useState(false);
   const [canvasReady, setCanvasReady] = useState(false);
 
   const handleLoaded = useCallback(() => setCanvasReady(true), []);
   const handleFallback = useCallback(() => setCanvasReady(false), []);
+
+  // Load cursor-tracking WebGL canvas on desktop upon first user interaction
+  // so initial load never pays a Three.js shader compilation or frame cost.
+  useEffect(() => {
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const isDesktopPointer = window.matchMedia(
+      "(min-width: 768px) and (hover: hover) and (pointer: fine)",
+    ).matches;
+
+    if (reducedMotion || !isDesktopPointer) return undefined;
+
+    const triggerMount = () => {
+      setShouldLoadWebGl(true);
+      window.removeEventListener("pointermove", triggerMount);
+      window.removeEventListener("pointerdown", triggerMount);
+      window.removeEventListener("keydown", triggerMount);
+    };
+
+    window.addEventListener("pointermove", triggerMount, { once: true, passive: true });
+    window.addEventListener("pointerdown", triggerMount, { once: true, passive: true });
+    window.addEventListener("keydown", triggerMount, { once: true, passive: true });
+
+    return () => {
+      window.removeEventListener("pointermove", triggerMount);
+      window.removeEventListener("pointerdown", triggerMount);
+      window.removeEventListener("keydown", triggerMount);
+    };
+  }, []);
 
   const handleClick = () => {
     if (!enableClickToRandomize) return;
@@ -152,25 +175,27 @@ export function TubesBackground({
       onClick={handleClick}
       className={cn("relative overflow-x-clip bg-[#07080b]", className)}
     >
-      {/* Fallback / ambient neon gradient always visible underneath */}
+      {/* Ambient neon mesh always visible immediately at zero JS/blocking cost */}
       {fallbackGlow}
 
-      {/* Interactive 3D WebGL Tubes Canvas */}
-      <div
-        aria-hidden="true"
-        className={cn(
-          "pointer-events-none absolute inset-0 z-0 transition-opacity duration-700",
-          canvasReady ? "opacity-100" : "opacity-0",
-        )}
-      >
-        <CanvasErrorBoundary fallback={null}>
-          <TubesCanvasLayer
-            paletteIndex={paletteIndex}
-            onLoaded={handleLoaded}
-            onFallback={handleFallback}
-          />
-        </CanvasErrorBoundary>
-      </div>
+      {/* Deferred 3D WebGL Tubes Canvas on desktop */}
+      {shouldLoadWebGl ? (
+        <div
+          aria-hidden="true"
+          className={cn(
+            "pointer-events-none absolute inset-0 z-0 transition-opacity duration-700",
+            canvasReady ? "opacity-100" : "opacity-0",
+          )}
+        >
+          <CanvasErrorBoundary fallback={null}>
+            <TubesCanvasLayer
+              paletteIndex={paletteIndex}
+              onLoaded={handleLoaded}
+              onFallback={handleFallback}
+            />
+          </CanvasErrorBoundary>
+        </div>
+      ) : null}
 
       {/* Subtle readability scrim over 3D tubes */}
       <div

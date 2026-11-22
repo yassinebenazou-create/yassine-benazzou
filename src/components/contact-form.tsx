@@ -321,7 +321,7 @@ export function ContactForm() {
             className="block text-sm font-medium text-slate-200"
           >
             {formCopy.company}{" "}
-            <span className="text-xs font-normal text-slate-500">
+            <span className="text-xs font-normal text-slate-400">
               {formCopy.companyOptional}
             </span>
           </label>
@@ -376,7 +376,7 @@ export function ContactForm() {
             className="block text-sm font-medium text-slate-200"
           >
             {formCopy.budget}{" "}
-            <span className="text-xs font-normal text-slate-500">
+            <span className="text-xs font-normal text-slate-400">
               {formCopy.budgetOptional}
             </span>
           </label>

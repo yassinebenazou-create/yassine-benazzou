@@ -95,7 +95,7 @@ export function ProjectDetailView({ project }: { project: Project }) {
               src={project.image}
               alt={`${project.name} — ${project.industry[language]}`}
               fill
-              priority
+              preload
               sizes="100vw"
               unoptimized={project.image.endsWith(".svg")}
               className="object-cover"

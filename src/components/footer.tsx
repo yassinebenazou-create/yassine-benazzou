@@ -27,7 +27,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="border-t border-white/10 bg-[#050608] text-slate-300">
+    <footer className="cv-auto border-t border-white/10 bg-[#050608] text-slate-300">
       <Container className="py-16 sm:py-20">
         {/* Top Tier: Studio Identity & Direct Contact vs. Grouped Index */}
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">

@@ -1,0 +1,223 @@
+export const frTranslations = {
+  nav: {
+    projects: "Projets",
+    services: "Services",
+    process: "Méthode",
+    faq: "FAQ",
+    letsTalk: "Demander un Devis",
+    openMenu: "Ouvrir le menu",
+    closeMenu: "Fermer le menu",
+    languageAria: "Changer de langue",
+  },
+  hero: {
+    available: "Disponible pour vos projets web",
+    location: "Maroc · International",
+    identity: "Yassine Benazzou · Développeur & Web Designer Freelance Maroc",
+    headline: "Développeur Web Freelance : Sites Sur Mesure au Maroc.",
+    description:
+      "Création de site internet professionnel et développement Next.js pour PME et entrepreneurs au Maroc et à l'étranger.",
+    primaryCta: "Demander un Devis Gratuit",
+    secondaryCta: "Voir les Projets Clients",
+    visual: {
+      headerTitle: "Projets Clients Réalisés",
+      statusBadge: "Aperçu Portfolio",
+      switchLabel: "Aperçu projet",
+      pillOne: "Code Next.js & React",
+      pillTwo: "Design Responsive",
+      pillThree: "Structure SEO EN / FR",
+    },
+  },
+  trustBar: {
+    label: "Projets livrés & villes accompagnées",
+    marketsSummary: "Casablanca, Agadir, El Jadida, Maroc & international",
+    reviewsCta: "Avis Google Business",
+  },
+  benefits: {
+    eyebrow: "Création Site Web Maroc",
+    title: "Création de Site Internet Professionnel & Sur Mesure.",
+    subtitle:
+      "Collaborez directement avec un développeur web freelance au Maroc, du design UI jusqu'à la mise en ligne.",
+    viewServicesCta: "Voir les 6 Services",
+    featuredTag: "Offre Principale",
+    soloTitle: "Développeur Web Freelance, Sans Intermédiaire",
+    soloDescription:
+      "Échangez directement avec la personne qui conçoit le design, écrit le code et optimise votre SEO.",
+    speedTitle: "Design Web Responsive & Bases SEO",
+    speedDescription:
+      "Sites pensés pour mobile et ordinateur avec une architecture technique propre pour le référencement Google.",
+    commerceTitle: "Sites Vitrines, Boutiques & Landing Pages",
+    commerceDescription:
+      "Des sites web professionnels conçus pour clarifier votre offre et générer de vraies demandes clients.",
+    stackTitle: "Technologies Utilisées",
+    stackDescription:
+      "Next.js, React, TypeScript, Tailwind CSS, WordPress, WooCommerce et Node.js.",
+  },
+  statement: {
+    eyebrow: "L'Écart Décisif",
+    headline:
+      "Un site confus fait fuir vos visiteurs en cinq secondes. Une création de site internet professionnel rassure dès le premier regard et facilite le contact.",
+  },
+  projects: {
+    eyebrow: "Web Designer Freelance Maroc",
+    title: "Projets Web Livrés au Maroc et à l'International.",
+    subtitle:
+      "Réalisations web dans la santé, l'e-commerce, l'automobile, le tourisme et l'architecture d'intérieur.",
+    viewAll: "Toutes les réalisations",
+    viewLive: "Visiter le Site en Ligne",
+    caseDetails: "Voir l'Étude Détaillée",
+    studioShowcase: "Vitrine Studio",
+    techLabel: "Focus & Stack",
+    backToProjects: "Retour aux projets",
+  },
+  services: {
+    eyebrow: "Services",
+    title: "Services de Création de Site Web au Maroc.",
+    subtitle:
+      "Site vitrine, boutique e-commerce, refonte et maintenance SEO en français ou en anglais.",
+    explore: "Détails du service",
+    inquire: "Demander un devis",
+    viewAll: "Tous les services",
+  },
+  about: {
+    eyebrow: "Développeur Full Stack Freelance",
+    title: "Yassine Benazzou — Développeur Full Stack Freelance au Maroc.",
+    badge: "Basé à El Jadida, Maroc · International",
+    paragraphs: [
+      "J'accompagne PME, cabinets, commerces et fondateurs au Maroc pour créer des sites rapides et crédibles.",
+      "Chaque projet associe direction visuelle soignée et développement Next.js, React, Laravel ou WordPress.",
+    ],
+    stackTitle: "Stack Technique",
+    moreAboutCta: "Voir le Profil Complet",
+    cta: "Réserver un Échange",
+  },
+  process: {
+    eyebrow: "Méthode Simple",
+    title: "Trois Étapes Claires Jusqu'à la Mise en Ligne.",
+    subtitle:
+      "Jalons précis, aperçus en cours de route et suivi réactif jusqu'au lancement.",
+    cta: "Démarrer l'Étape 01",
+    stepLabel: "Étape",
+  },
+  testimonials: {
+    eyebrow: "Preuves & Avis Clients",
+    title: "Des Réalisations Concrètes et Vérifiables.",
+    subtitle:
+      "Parcourez les sites clients livrés ou consultez les retours sur ma fiche Google Business.",
+    googleTitle: "Consulter ou Laisser un Avis Google",
+    googleDescription:
+      "Vous avez travaillé avec moi ? Votre avis aide d'autres entrepreneurs marocains et internationaux.",
+    googleButton: "Voir les Avis Google",
+    deliverableLabel: "Périmètre Livré",
+    liveBadge: "En Ligne",
+    showcaseBadge: "Vitrine Studio",
+  },
+  faq: {
+    eyebrow: "Questions Fréquentes",
+    title: "Questions Fréquentes sur la Création de Site Web.",
+    subtitle:
+      "Méthode, compatibilité mobile, référencement SEO et sites bilingues expliqués simplement.",
+    quickNote: "Une question rapide ? Écrivez-moi directement sur WhatsApp.",
+    whatsappCta: "Écrire sur WhatsApp",
+  },
+  contact: {
+    eyebrow: "Lancer Votre Projet",
+    title: "Lancez Votre Projet Web Avec un Développeur Freelance.",
+    subtitle:
+      "Décrivez votre besoin ci-dessous pour recevoir des recommandations claires et un devis adapté.",
+    directTitle: "Contacts Directs",
+    directSubtitle: "Choisissez le canal le plus pratique pour vous.",
+    placeholderTag: "Placeholder config",
+    channels: {
+      whatsapp: "WhatsApp",
+      whatsappHint: "Échange rapide par message",
+      email: "Email",
+      emailHint: "Devis & briefs complets",
+      linkedin: "LinkedIn",
+      linkedinHint: "Réseau professionnel",
+      instagram: "Instagram",
+      instagramHint: "@yassine.benazzou",
+    },
+    marketsBanner:
+      "Clients accompagnés au Maroc (Casablanca, Agadir, El Jadida), France, Belgique, Canada & EAU.",
+    form: {
+      title: "Envoyer Votre Brief Projet",
+      fullName: "Nom complet",
+      fullNamePlaceholder: "Votre nom et prénom",
+      email: "Adresse email",
+      emailPlaceholder: "vous@entreprise.com",
+      company: "Entreprise / Marque",
+      companyOptional: "(optionnel)",
+      companyPlaceholder: "Nom de votre entreprise",
+      projectType: "Type de projet",
+      projectTypes: [
+        "Création de Site Vitrine",
+        "Boutique E-commerce",
+        "Landing Page Campagne",
+        "Refonte de Site Web",
+        "Design Web Responsive",
+        "Maintenance & SEO",
+        "Projet Sur Mesure",
+      ],
+      budget: "Budget estimé",
+      budgetOptional: "(optionnel)",
+      budgetOptions: [
+        "À définir ensemble",
+        "Moins de 10 000 MAD / < 1 000 €",
+        "1 000 € – 2 500 €",
+        "2 500 € – 5 000 €",
+        "5 000 € +",
+      ],
+      description: "Résumé du projet",
+      descriptionPlaceholder:
+        "Expliquez votre activité, l'objectif du site et quelques références que vous appréciez...",
+      submit: "Envoyer le Brief Projet",
+      submitting: "Envoi en cours...",
+      validation: {
+        nameRequired: "Veuillez indiquer votre nom complet.",
+        emailInvalid: "Veuillez saisir une adresse email valide.",
+        descriptionMin: "Merci d'écrire au moins 15 caractères sur votre projet.",
+        genericError: "Une erreur est survenue. Réessayez ou contactez-moi directement.",
+      },
+      successTitle: "Brief Validé",
+      successNote:
+        "Votre demande est prête. Utilisez les boutons ci-dessous pour l'envoyer sur WhatsApp ou par email.",
+      successDeliveredNote:
+        "Votre demande a été transmise. Je reviens vers vous rapidement.",
+      sendViaWhatsapp: "Envoyer via WhatsApp",
+      sendViaEmail: "Ouvrir dans l'app Email",
+      sendAnother: "Envoyer une autre demande",
+    },
+  },
+  footer: {
+    tagline:
+      "Développeur web freelance au Maroc concevant des sites rapides et clairs pour attirer des clients.",
+    navigationTitle: "Studio",
+    servicesTitle: "Services",
+    locationsTitle: "Pages Maroc",
+    rights: "Tous droits réservés.",
+    builtBy: "Conçu et codé par Yassine Benazzou.",
+  },
+  subpages: {
+    homeCrumb: "Accueil",
+    servicesCrumb: "Services",
+    projectsCrumb: "Projets",
+    aboutCrumb: "À propos",
+    contactCrumb: "Contact",
+    wantSimilar: "Demander un Site Similaire",
+    projectInfo: "Aperçu du Projet",
+    sector: "Secteur",
+    technologies: "Technologies",
+    deliverables: "Périmètre",
+    clientNeeds: "Objectifs Client",
+    proposedSolution: "Solution Apportée",
+    keyFeatures: "Éléments Clés",
+    gallery: "Aperçu Visuel",
+    serviceDetailsEyebrow: "Périmètre Inclus",
+    serviceDetailsTitle: "Clarté, Rapidité et Prise de Contact",
+    serviceDetailsText:
+      "Chaque prestation est cadrée précisément selon vos objectifs et vos délais.",
+    faqEyebrow: "FAQ",
+    faqTitle: "Questions Fréquentes",
+    faqText: "Des réponses directes avant le démarrage de votre projet.",
+  },
+};
