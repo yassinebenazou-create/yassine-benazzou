@@ -41,12 +41,13 @@ export function HomeSections() {
 function HeroSection() {
   const { language, content } = useLanguage();
   const h = content.hero;
+  const headlineParts = h.headline.split(language === "fr" ? " pour " : " for ");
 
   return (
     <TubesBackground className="border-b border-white/10">
       <section
         id="home"
-        className="relative pt-28 pb-16 sm:pt-36 sm:pb-20 lg:pt-40 lg:pb-24"
+        className="hero-section relative pt-28 pb-16 sm:pt-36 sm:pb-20 lg:pt-40 lg:pb-24"
       >
         <Container className="relative z-10">
           <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-16">
@@ -66,15 +67,25 @@ function HeroSection() {
                 </span>
               </div>
 
-              <p className="mt-7 text-sm font-medium text-slate-300">
+              <p className="mt-7 text-xs font-semibold tracking-[0.08em] text-slate-300 sm:text-sm">
                 {h.identity}
               </p>
 
-              <h1 className="font-display mt-3 text-balance text-4xl font-extrabold tracking-[-0.04em] text-white sm:text-5xl lg:text-[3.75rem] lg:leading-[1.03]">
-                {h.headline}
+              <h1 className="font-display mt-4 max-w-[13ch] text-balance text-[2.65rem] font-extrabold leading-[0.99] tracking-[-0.05em] text-white sm:text-6xl lg:text-[4.25rem]">
+                {headlineParts.length === 2 ? (
+                  <>
+                    {headlineParts[0]}
+                    <span className="hero-title-accent">
+                      {language === "fr" ? " pour " : " for "}
+                      {headlineParts[1]}
+                    </span>
+                  </>
+                ) : (
+                  h.headline
+                )}
               </h1>
 
-              <p className="mt-6 max-w-lg text-pretty text-base leading-relaxed text-slate-200 sm:text-lg">
+              <p className="mt-6 max-w-[34rem] text-pretty text-base leading-8 text-slate-300 sm:text-lg sm:leading-8">
                 {h.description}
               </p>
 
@@ -93,10 +104,10 @@ function HeroSection() {
             </div>
           </div>
 
-          <div className="mt-14 flex justify-center">
+          <div className="mt-12 flex justify-center sm:mt-14">
             <a
               href="#projects"
-              className="md:animate-scroll-bounce inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.03] px-4 py-2 text-xs font-medium text-slate-300 transition hover:border-emerald-400/45 hover:text-white"
+              className="md:animate-scroll-bounce inline-flex min-h-11 items-center gap-2.5 rounded-full border border-white/12 bg-[#07080b]/35 px-4 text-xs font-medium text-slate-300 backdrop-blur-sm transition hover:border-emerald-400/45 hover:text-white"
             >
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" aria-hidden="true" />
               <span>{language === "fr" ? "Voir les réalisations" : "Explore selected work"}</span>
@@ -115,7 +126,7 @@ function TrustBarSection() {
   return (
     <section
       aria-label={t.label}
-      className="border-y border-white/10 bg-[#0b0d12] py-8 sm:py-10"
+      className="border-y border-white/10 bg-[#0b0d12]/90 py-7 sm:py-8"
     >
       <Container>
         <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">

@@ -55,9 +55,64 @@ h3,
   color: #f8fafc;
 }
 
+.hero-section {
+  isolation: isolate;
+}
+
+.hero-section::before,
+.hero-section::after {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+}
+
+.hero-section::before {
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: linear-gradient(to bottom, black, transparent 88%);
+  opacity: 0.32;
+}
+
+.hero-section::after {
+  top: 4%;
+  right: -8%;
+  width: min(60vw, 880px);
+  height: 88%;
+  background: radial-gradient(ellipse at center, rgba(52, 211, 153, 0.1), transparent 68%);
+  filter: blur(18px);
+}
+
+.hero-title-accent {
+  background: linear-gradient(105deg, #6ee7b7 5%, #34d399 55%, #67e8f9 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.reveal-motion {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  filter: blur(0);
+  transition:
+    opacity 700ms var(--motion-ease) var(--reveal-delay, 0s),
+    transform 700ms var(--motion-ease) var(--reveal-delay, 0s),
+    filter 700ms var(--motion-ease) var(--reveal-delay, 0s);
+}
+
+.reveal-motion[data-reveal="pending"] {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0) scale(0.985);
+  filter: blur(5px);
+}
+
 /* Crisp 1px framed studio card with subtle depth and tactile hover */
 .studio-card {
-  background: linear-gradient(180deg, rgba(20, 25, 35, 0.88) 0%, rgba(12, 15, 22, 0.96) 100%);
+  background:
+    radial-gradient(ellipse at 100% 0%, rgba(52, 211, 153, 0.045), transparent 40%),
+    linear-gradient(180deg, rgba(20, 25, 35, 0.9) 0%, rgba(12, 15, 22, 0.98) 100%);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 18px 42px -24px rgba(0, 0, 0, 0.85);
   transition:
@@ -68,9 +123,18 @@ h3,
 
 .studio-card:hover {
   border-color: rgba(52, 211, 153, 0.38);
+  background:
+    radial-gradient(ellipse at 100% 0%, rgba(52, 211, 153, 0.085), transparent 44%),
+    linear-gradient(180deg, rgba(20, 25, 35, 0.96) 0%, rgba(12, 15, 22, 1) 100%);
   box-shadow:
     0 24px 56px -22px rgba(0, 0, 0, 0.92),
     0 0 0 1px rgba(52, 211, 153, 0.12);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .studio-card:not(.neon-card-lift):hover {
+    transform: translateY(-3px);
+  }
 }
 
 /* Defer layout and paint for off-screen sections while keeping full DOM & SEO availability */
@@ -99,6 +163,17 @@ h3,
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .reveal-motion {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+
+  .studio-card:hover {
+    transform: none !important;
+  }
+
   *,
   *::before,
   *::after {
